@@ -1,0 +1,84 @@
+---
+title: "Monte Carlo Integration Tests for the Unit Hypercube"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Monte Carlo Integration Tests for the Unit Hypercube}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+## Introduction
+We will use the package to test Monte Carlo integration over the unit hypercube $C_n=[0,1]^n$.
+The package covers test functions for five different domains, but the interfaces are the same in every case.
+For each function in this package the exact value of the integral over the respective integration domain is known for any dimension $n\geq 1$.
+This allows to check and contrast multivariate integration routines for in different settings such as low, medium and high dimensional.
+In this vignette we use as an example Monte Carlo type integration due to its simplicity.
+The interface to the package is the same in all cases:
+
+We need to instantiate an object from one of the classes.
+This object represents the function that we want to integrate.
+Each object (function) has a mandatory variable that represents the dimension of the integral.
+Other parameters depend on the specific functions.
+With the instance we then have access to basic information about the function and can evaluate it for a given set of points.
+These evaluation points are arranged in a matrix where each row represents an evaluation point.
+The number of columns needs to be equal to the dimension variable that is set when creating the object (function).
+To check which points in such a matrix are in the integration domain linked to the function one can use **checkDomain**.
+In total there are six methods that can be used for an instance.
+
+1. **exactIntegral** returns the exact integral of the test function over the domain. The value (generally) depends on the parameters that are set when the function (instance) is created. *The function also checks if the given parameters of the function are correctly specified*.
+2. **domainCheck** checks for each row in a given matrix if this point is inside the integration domain for a given function and returns a vector with Boolean values. This can be used to check if the node points of a multivariate integration routine are correctly specified. *The function checks if the input matrix has real entries and the correct dimensions. The function also checks if the given parameters of the function are correctly specified*.
+3. **evaluate** evaluates the function for each row of a given input matrix and returns a vector. Based on the evaluations the numerical integration can be performed. *The function checks if the input matrix has real entries and the correct dimensions. The function also checks if the given parameters of the function are correctly specified*.
+4. **getIntegrationArea** provides a string that represents the integration area for the function.
+5. **getTags** provides a vector of strings with tags associated to the specific function.
+6. **getReferences** provides a vector of strings with references that provide more details for this function. The first entry provides the subsection number in the "Function_References.pdf" file that provides details on the specific function.
+
+**Warning: The numerical integration scheme utilised in the following section is only used to showcase the package and its functions. It is not intended as an examples of a "best practice" when it comes to multivariate numerical integration.**
+
+## Monte Carlo Integration on the Unit Hypercube $C_n=[0,1]^n$
+We exemplify the usage of the package by numerically integrate over the unit hypercube $C_n = [0,1]^n$.
+In this case Monte Carlo integration works straight out of the box with standard uniform (pseudo) random numbers.
+If $\vec{U} = (U_1,\ldots,U_n)$ is uniformly distributed over $C_n$ we can approximate the integral of a function $f$ via
+$$
+\int_{C_n} f(\vec{x}) d\vec{x} = \mathbb{E}[f(\vec{U})] \approx \frac{1}{n} \sum_{i=1}^n f(\vec{U}_i),
+$$
+where the law of large numbers is used with independent copies $\vec{U}_i$, $1\leq i\leq n$, of $\vec{U}$.
+It is easy to generate such independnet copies by simply drawing independt (pseudo) random numbers.
+For example, for the specific choice of $f$ as
+$$
+f(\vec{x}) = (\cos( a_1x_1+\ldots+a_nx_n ))^2
+$$
+we have
+$$
+\int_{C_n} f(\vec{x}) d\vec{x} = \frac{1}{2} + \frac{1}{2}\cos(a_1+\ldots+a_n)\prod_{i=1}^n\frac{\sin(a_j)}{a_j},
+$$
+where $a_i\neq 0$.
+We can now compare the numerical integration outlined above to the theoretical value as follows.
+
+```{r integrate_Rn}
+require(multIntTestFunc)
+set.seed(42)
+
+n <- as.integer(4) #the dimension needs to be of type "integer"
+coeffs <- 1:n #get example coefficients
+f <- new("unitCube_cos2",coeffs=coeffs,dim=n) #create instance
+
+#print some information on the function
+print(getIntegrationArea(f))
+print(getTags(f))
+print(getReferences(f))
+
+#evaluate integral by simple Monte Carlo integration
+N <- 10000 #choose number of node points
+U <- matrix(runif(N*n),N,n) #arrange points in matrix
+
+D <- domainCheck(f,U) #check if the points are in the integration domain
+U <- U[D,] #select the points in the integration domain (here f is supported over C_n so we take all points)
+U <- as.matrix(U,ncol=n) #arrange points in matrix - only necessary because for n=1 we might get a vector, but we need a matrix input for our evaluate function
+
+eval <- evaluate(f,U) #evaluate the function f on the points U
+approx <- mean(eval) #approximate the expectation by average
+print(approx)
+
+#print exact integral
+print(exactIntegral(f))
+```
+
