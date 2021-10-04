@@ -1,0 +1,447 @@
+\documentclass[11pt]{article}
+\usepackage[latin1,utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{dsfont} %\usepackage{bbm} might not work for double stroke 1
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{pdflscape}
+\definecolor{links}{RGB}{0,0,128}
+
+\hypersetup{
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftitle={},    % title
+    pdfauthor={Klaus Herrmann},     % author
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=links,          % color of internal links (change box color with linkbordercolor)
+    citecolor=links,        % color of links to bibliography
+    filecolor=links,      % color of file links
+    urlcolor=links           % color of external links
+}
+
+\def\R{\mathbb{R}}
+\def\Prob{\mathbb{P}}
+\def\N{\mathbb{N}}
+\def\bfx{\bm{x}}
+\def\bfX{\bm{X}}
+\def\bfv{\bm{v}}
+\def\d{\,\mathrm{d}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\definecolor{links}{RGB}{0,0,128}
+\def\bfa{\bm{a}}
+\def\bx{\mathbf{x}}
+\def\ba{\mathbf{a}}
+\def\bb{\mathbf{b}}
+\def\Normal{\mathcal{N}}
+\newcommand{\xNorm}[2]{\left \Vert #1 \right \Vert_{#2} }
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
+\newcommand{\ind}[1]{\mathds{1}_{#1} }
+
+\begin{document}
+
+\newpage
+\title{\textbf{Mult}ivariate \textbf{Int}egration \textbf{Test Func}tions - Function References}
+\author{Klaus Herrmann (Université de Sherbrooke)}
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+This note compiles references for the integration test functions implemented in the R package \emph{multIntTestFunc}.
+For each function there is either a derivation of the exact value of the integral or a reference to a derivation.
+The functions are sorted by integration domains and Tables~\ref{table_Rn}--\ref{table_sphere} provide an overview over the test functions for the supported domains at the end of the document.
+The available integration domains are
+\begin{itemize}
+	\item the Euclidean space $\R^n$ (Section~R),
+	\item the standard simplex $T_n$ (Section~T),
+	\item the unit hypercube $C_n$ (Section~C),
+	\item the unit ball $B_n$ (Section~B), and
+	\item the unit sphere $S^{n-1}$ (Section~S).
+\end{itemize}
+For shorthand notation we use $\cdot$ for inner products, i.e., $\ba\cdot\bb = \sum_{i=1}^n a_ib_i$ for two vectors in $\R^n$.
+%
+%
+%
+%\newpage
+%
+%
+%
+\section*{R\hspace{0.5cm}Euclidean Space $\R^n = \times_{i=1}^{n} \R$}
+\addcontentsline{toc}{section}{R\hspace{0.5cm}Euclidean Space $\R^n = \times_{i=1}^{n} \R$}
+\subsection*{R.1\hspace{0.5cm}Gaussian Integral}
+\addcontentsline{toc}{subsection}{R.1\hspace{0.5cm}Gaussian Integral}
+Consider the function
+\begin{align*}
+f\colon \R^n\to(0,\infty), \bx \mapsto f(\bx) = e^{-\xNorm{\bx}{2}^2}.
+\end{align*}
+As a standard result we have $\int_{\R} e^{-x^2}\d x = \pi^{1/2}$.
+This leads to
+\begin{align*}
+\int_{\R^n} f(\bx) \d \bx
+= \int_{\R^n} e^{-\xNorm{\bx}{2}^2} \d \bx
+= \int_{\R^n} \prod_{i=1}^n e^{-x_i^2} \d \bx
+= \prod_{i=1}^n \int_{\R^n}  e^{-x_i^2} \d x_i
+= \pi^{n/2}.
+\end{align*}
+%
+%
+\subsection*{R.2\hspace{0.5cm}Floor Norm Integral}
+\addcontentsline{toc}{subsection}{R.2\hspace{0.5cm}Floor Norm Integral}
+For $s>1$ define the function
+\begin{align*}
+f\colon \R^n\to(0,\infty), \bx \mapsto f(\bx) = \frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\lfloor \Vert \bx \Vert_2^n \rfloor)^s}.
+\end{align*}
+Denote by $B_{r}(0) = \{\bx\in\R^n : \xNorm{\bx}{2}<r\}$ the open ball centered at zero in $\R^n$.
+In this case we have for $k=\{1,2,3,\ldots\}$ that
+\begin{align*}
+1+\lfloor \Vert \bx \Vert_2^n \rfloor = k \Leftrightarrow (k-1)^{1/n} \leq \xNorm{\bx}{2} < k^{1/n} \Leftrightarrow \bx \in B_{k^{1/n}}(0) \setminus B_{(k-1)^{1/n}}(0).
+\end{align*}
+Therefore $f$ is constant on the shells $S_k = B_{k^{1/n}}(0) \setminus B_{(k-1)^{1/n}}(0)$, where we set $S_1 = B_1(0)$, with value $f(\bx) = \Gamma(n/2+1)/(\pi^{n/2}k^s)$.
+Therefore
+\begin{align*}
+\int_{\R^n} f(\bx) \d \bx
+&= \int_{\uplus_{k\geq 1}S_k}  f(\bx) \d \bx
+= \sum^{\infty}_{k=1} \int_{S_k}  f(\bx) \d \bx
+= \sum^{\infty}_{k=1} \frac{\Gamma(n/2+1)}{\pi^{n/2}k^s} \text{vol}\left(S_k\right)\\
+&= \sum^{\infty}_{k=1} \frac{\Gamma(n/2+1)}{\pi^{n/2}k^s} \left(\text{vol}(B_{k^{1/n}}(0))-\text{vol}(B_{(k-1)^{1/n}}(0))\right)\\
+&= \sum^{\infty}_{k=1} \frac{\Gamma(n/2+1)}{\pi^{n/2}k^s} \left(\frac{\pi^{n/2}}{\Gamma(n/2+1)}(k^{1/n})^n-
+\frac{\pi^{n/2}}{\Gamma(n/2+1)}((k-1)^{1/n})^n
+\right)\\
+&= \sum^{\infty}_{k=1} \frac{1}{k^s} = \zeta(s),
+\end{align*}
+where $\zeta$ is the Riemann zeta function.
+%
+%
+%
+%\newpage
+%
+%
+%
+\section*{T\hspace{0.5cm}Standard Simplex $T_n = \{\bx\in\R^n : x_i \geq 0, \xNorm{\bx}{1} \leq 1\}$}
+\addcontentsline{toc}{section}{T\hspace{0.5cm}Standard Simplex $T_n = \{\bx\in\R^n : x_i \geq 0, \xNorm{\bx}{1} \leq 1\}$}
+For a continuously differentiable function $f \colon [0,1] \to \R$ we have, see \cite{IntegralSimplex}, that
+\begin{align}\label{equation_simplex_sum}
+\int_{T_n} f(x_1+\ldots+x_n) \d \bx = \frac{1}{\Gamma(n)} \int_0^1 f(s)s^{n-1}ds.
+\end{align}
+Equation~\eqref{equation_simplex_sum} can be used to construct integrable functions on $T_n$.
+%
+%
+\subsection*{T.1\hspace{0.5cm}Dirichlet Integral}
+\addcontentsline{toc}{subsection}{T.1\hspace{0.5cm}Dirichlet Integral}
+For a vector $\bfv\in\R^{n+1}$ with strictly positive entries, i.e., $v_i>0$, define the function
+\begin{align*}
+f\colon T_{n}\to(0,\infty), \bx \mapsto f(\bx) = \prod_{i=1}^{n}x_i^{v_i-1}(1 - x_1 - \ldots - x_n)^{v_{n+1}-1}.
+\end{align*}
+It can be seen that the integral of $f$ over $T_n$ is the norming constant for the Dirichlet distribution.
+We therefore have
+\begin{align*}
+\int_{T_n} f(\bx) \d\bx = \frac{\prod_{i=1}^{n+1}\Gamma(v_i)}{\Gamma(\sum_{i=1}^{n+1}v_i)}.
+\end{align*}
+%
+%
+\subsection*{T.2\hspace{0.5cm}Exponential of Sum}
+\addcontentsline{toc}{subsection}{T.2\hspace{0.5cm}Exponential of Sum}
+For a constant $c>0$ define the function
+\begin{align*}
+f\colon T_{n}\to(0,\infty), \bx \mapsto f(\bx) = e^{-c(x_1+\ldots+x_n)}.
+\end{align*}
+Combining \eqref{equation_simplex_sum} with integration-by-substitution yields
+\begin{align*}
+\int_{T_n} f(\bx) \d\bx
+&= \frac{1}{\Gamma(n)} \int_0^1 e^{-cs}s^{n-1} \d s\\
+&= \frac{c^{-n}}{\Gamma(n)} \int_0^c e^{-t}t^{n-1} \d t\\
+&= \frac{\Gamma(n)-\Gamma(n,c)}{c^{n}\Gamma(n)},
+\end{align*}
+where $\Gamma(s,x)$ is the upper incomplete gamma function defined as
+\begin{align*}
+\Gamma(s,x) = \int_x^{\infty} t^{s-1}e^{-t} \d t.
+\end{align*}
+%
+%
+%
+%\newpage
+%
+%
+%
+\section*{C\hspace{0.5cm}Unit Cube $C_n = [0,1]^n$}
+\addcontentsline{toc}{section}{C\hspace{0.5cm}Unit Cube $C_n = [0,1]^n$}
+\subsection*{C.1\hspace{0.5cm}Cosine Square}
+\addcontentsline{toc}{subsection}{C.1\hspace{0.5cm}Cosine Square}
+For a vector $\bfv\in\R^n$ define the function
+\begin{align*}
+f\colon C_{n}\to\R, \bx \mapsto f(\bx) = (\cos\left(\bfx\cdot\bfv\right))^2.
+\end{align*}
+Following \cite{IntegralCos2} one can use the identities $\cos(x)=\Re(e^{ix})$ and $\cos(x)^2 = \frac{1}{2}+\frac{1}{2}\cos(2x)$ to show
+\begin{align*}
+\int_{C_{n}} f(\bx) \d\bx =\frac{1}{2}+\frac{1}{2}\cos\left(\sum_{j=1}^{n}v_j\right)\prod_{j=1}^{n}\frac{\sin(v_j)}{v_j}.
+\end{align*}
+%
+%
+%
+\subsection*{C.2\hspace{0.5cm}Floor of Sum}
+\addcontentsline{toc}{subsection}{C.2\hspace{0.5cm}Floor of Sum}
+For the function
+\begin{align*}
+f\colon C_{n}\to\R, \bx \mapsto f(\bx) = \lfloor x_1 + \ldots + x_n \rfloor
+\end{align*}
+we have, see \cite{IntegralFloorCube}, that
+\begin{align*}
+\int_{C_{n}} f(\bx) \d\bx = \frac{n-1}{2}.
+\end{align*}
+%
+%
+%
+%\newpage
+%
+%
+%
+\section*{B\hspace{0.5cm}Unit Ball $B_n = \{\bx \in \mathbb{R}^n : \xNorm{\bx}{2} \leq 1\}$}
+\addcontentsline{toc}{section}{B\hspace{0.5cm}Unit Ball $B_n = \{\bx \in \mathbb{R}^n : \xNorm{\bx}{2} \leq 1\}$}
+%
+%
+%
+\subsection*{B.1\hspace{0.5cm}Norm of Standard Normal Random Vector}
+\addcontentsline{toc}{subsection}{B.1\hspace{0.5cm}Norm of Standard Normal Random Vector}
+The function
+\begin{align*}
+f\colon B_{n}\to\R, \bx \mapsto f(\bx) = \frac{1}{(2\pi)^{n/2}}e^{-\xNorm{\bx}{2}^2/2}
+\end{align*}
+can be seen as the density of a random vector $\bfX=(X_1,\ldots,X_n)$, where all $X_i\sim\Normal(0,1)$ are independent.
+We can then rewrite the integral as
+\begin{align*}
+\int_{B_{n}} f(\bx) \d\bx = \Prob[\xNorm{\bfX}{2}\leq 1] = \Prob[\xNorm{\bfX}{2}^2\leq 1] = F_{\chi^2_n}(1),
+\end{align*}
+where $F_{\chi^2_n}$ is the distribution function of a chi-square random variable.
+%
+%
+%
+\subsection*{B.2\hspace{0.5cm}Polynomials}
+\addcontentsline{toc}{subsection}{B.2\hspace{0.5cm}Polynomials}
+For non-negative integers $a_1,\ldots,a_n$, $a_i\in\{0,1,2,\ldots\}$, define the monomial
+\begin{align*}
+f\colon B_{n}\to\R, \bx \mapsto f(\bx) = \prod_{i=1}^{n}x_i^{a_i}.
+\end{align*}
+We know from \cite{Folland2001} that
+\begin{align*}
+\int_{B_{n}} f(\bx) \d\bx =
+\begin{cases}
+0, &\text{ if at least one $a_i$ is odd},\\
+\frac{2\prod_{i=1}^{n}\Gamma(b_i)}{\Gamma(\sum^{n}_{i=1}b_i)(n+\sum_{i=1}^{n}a_i)}, b_i = \frac{a_i+1}{2}, &\text{ if all $a_i$ are even}.
+\end{cases}
+\end{align*}
+%
+%
+%
+%\newpage
+%
+%
+\section*{S\hspace{0.5cm}Unit Sphere $S^{n-1} = \{\bx\in\R^n : \xNorm{\bx}{2} = 1\}$}
+\addcontentsline{toc}{section}{S\hspace{0.5cm}Unit Sphere $S^{n-1} = \{\bx\in\R^n : \xNorm{\bx}{2} = 1\}$}
+%
+%
+\subsection*{S.1\hspace{0.5cm}Inner Products}
+\addcontentsline{toc}{subsection}{S.1\hspace{0.5cm}Inner Products}
+For two vectors $\ba,\bb\in\R^n$ define the function
+\begin{align*}
+f\colon S^{n-1}\to\R, \bx \mapsto f(\bx) = (\ba\cdot\bx)(\bb\cdot\bx).
+\end{align*}
+From Proposition~2 in \cite{KhanPinsky2003} we know
+\begin{align*}
+\int_{S^{n-1}} f(\bx) \d\bx = \frac{\abs{S^{n-1}}}{n}(\ba\cdot\bb).
+\end{align*}
+For $n > 1$ we have $\abs{S^{n-1}} = \frac{2\pi^{n/2}}{\Gamma(n/2)}$.
+For $n=1$ we have $S^{n-1} = \{-1,1\}$ and therefore the integral is zero.
+%
+%
+%
+\subsection*{S.2\hspace{0.5cm}Polynomials}
+\addcontentsline{toc}{subsection}{S.2\hspace{0.5cm}Polynomials}
+For non-negative integers $a_1,\ldots,a_n$, $a_i\in\{0,1,2,\ldots\}$, define the monomial
+\begin{align*}
+f\colon S^{n-1}\to\R, \bx \mapsto f(\bx) = \prod_{i=1}^{n}x_i^{a_i}.
+\end{align*}
+For $n >1$ we know from \cite{Folland2001} that
+\begin{align*}
+\int_{S^{n-1}} f(\bx) \d\bx =
+\begin{cases}
+0, &\text{ if at least one $a_i$ is odd},\\
+\frac{2\prod_{i=1}^{n}\Gamma(b_i)}{\Gamma(\sum^{n}_{i=1}b_i)}, b_i = \frac{a_i+1}{2}, &\text{ if all $a_i$ are even}.
+\end{cases}
+\end{align*}
+For $n=1$ we have $S^{n-1} = \{-1,1\}$ and therefore the integral is zero.
+%
+%
+%
+\section*{Tables of Integration Functions}
+\addcontentsline{toc}{section}{Tables of Integration Functions}
+The following Tables~\ref{table_Rn}--\ref{table_sphere} provide an overview over the available functions by integration domain.
+The first column shows the S4 class name within the package, while the last column provides a reference to the relevant subsection in this document.
+
+%
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+Rn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+Gauss & $n \in \N$ & $\exp(-\xNorm{\bfx}{2}^2)$ & $\pi^{n/2}$ & $C^{\infty}$ & R.1\\
+\rule{0pt}{4ex}
+floorNorm & $n \in \N$, $s > 1$ & $\frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\floor{\Vert \bfx \Vert_2^n})^s}$ & $\zeta(s)$ & non-continuous & R.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $\R^n$.}
+\label{table_Rn}
+\end{table}
+\end{landscape}
+%
+%
+%
+%
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+standardSimplex\_ & Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+Dirichlet & $n \in \N$, $\bfv \in (0,\infty)^{n+1}$ & $\prod_{i=1}^{n}x_i^{v_i-1}(1 - \sum^{n}_{i=1}x_i)^{v_{n+1}-1}$ & $\frac{\prod_{i=1}^{n+1}\Gamma(v_i)}{\Gamma(\sum_{i=1}^{n+1}v_i)}$ & $C^{\infty}$ & T.1\\
+\rule{0pt}{4ex}
+exp\_sum & $n \in \N$, $c>0$ & $\exp(-c(x_1+\ldots+x_n))$ & $\frac{\Gamma(n)-\Gamma(n,c)}{\Gamma(n)c^n}$ & $C^{\infty}$ & T.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $T_n$.}
+\label{table_simplex}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+unitCube\_ & Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+cos2 & $n \in \N$, $\bfv \in \R^n \setminus \mathbf{0}_n$ & $\left(\cos(\bfv\cdot\bfx)\right)^2$ & $\frac{1}{2}+\frac{1}{2}\cos(\bfv\cdot\mathbf{1}_n)\prod_{k=1}^{n}\frac{\sin(v_k)}{v_k}$ & $C^{\infty}$ & C.1\\
+\rule{0pt}{4ex}
+floor & $n \in \N$ & $\floor{x_1+\ldots+x_n}$ & $(n-1)/2$ & non-continuous & C.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $C_n=[0,1]^n$.}
+\label{table_cube}
+\end{table}
+%
+\end{landscape}
+
+
+
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+unitBall\_ & Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+normGauss & $n \in \N$ & $\frac{1}{(2\pi)^{n/2}}\exp(-\xNorm{\bfx}{2}^2/2)$ & $F_{\chi^2_n}(1)$ & $C^{\infty}$ & B.1\\
+\rule{0pt}{4ex}
+polynomial & $n \in \N$, $\bfa\in\{0,1,2,\ldots\}^n$ & $\prod_{i=1}^{n}x_i^{a_i}$ & (see details) & $C^{\infty}$ & B.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $B_n$.}
+\label{table_ball}
+\end{table}
+\end{landscape}
+
+
+
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+unitSphere\_ & Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+innerProduct1 & $n \in \N$, $\ba,\bb\in\R^n$ & $(\ba\cdot\bx)(\bb\cdot\bx)$ & $\frac{\abs{S^{n-1}}}{n}(\ba\cdot\bb)$ & $C^{\infty}$ & S.1\\
+\rule{0pt}{4ex}
+polynomial & $n \in \N$, $\bfa\in\{0,1,2,\ldots\}^n$ & $\prod_{i=1}^{n}x_i^{a_i}$ & (see details) & $C^{\infty}$ & S.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $S^{n-1}$.}
+\label{table_sphere}
+\end{table}
+\end{landscape}
+
+
+\bibliography{bibDocumentationTestFunctions}{}
+\bibliographystyle{plain}
+
+%\begin{thebibliography}{100}  % 100 is a random guess of the total number of %references
+%\bibitem{Folland2001}[Folland (2001)] Gerald B. Folland, How to Integrate a Polynomial over a Sphere. The American Mathematical Monthly, Vol. 108, No. 5 (May, 2001), pp. 446-448.
+%\bibitem{KhanPinsky2003}[Khan and Pinsky (2003)] Khan, T., Pinsky, M. (2003). On some integrals over a unit sphere. Technical report.
+%\end{thebibliography}
+
+\end{document}
+
+\begin{abstract}
+%Third, the introduced risk measure is defined for random vectors instead of random variables.
+\end{abstract}
+%
+%
+
+
+
+
+\section{Numerical Integration Based on Quasi Random Numbers}
+\subsection{Monte Carlo Integration for $A\subsetneq \R^n$}
+To explain the code in the vignette it is beneficial to review Monte Carlo integration.
+Monte Carlo integration is the simplest multivariate integration scheme and serves as a standard.
+If we are interested in integrating a multivariate function $f$ over a domain $A \subsetneq \R^n$ we can resort to Monte Carlo integration if we can generate uniformly distributed (pseudo) random numbers over a set $B$ such that $A \subseteq B$ and $\leb(B)>0$.
+\begin{align*}
+\int_{A} f(\bfx) \d \bfx
+&= \int_{B} f(\bfx) \ind{A}(\bfx) \frac{\leb(B)}{\leb(B)} \d \bfx
+=  \leb(B)\int_{B} f(\bfx) \ind{A}(\bfx)  \frac{1}{\leb(B)}\d \bfx
+= \leb(B) \E[f(\bfU) \ind{A}(\bfU)]\\
+&\approx \leb(B) \frac{1}{n}\sum^{n}_{i=1} f(\bfU_i) \ind{A}(\bfU_i).
+\end{align*}
+
+\subsection{Integration over $\R^n$}
+$\bfX$ with density $h(\bfx)>0$
+\begin{align*}
+\int_{\R^n} f(\bfx) \d \bfx
+&= \int_{\R^n} f(\bfx) \frac{h(\bfx)}{h(\bfx)} \d \bfx\\
+& = \int_{\R^n} \frac{f(\bfx)}{h(\bfx)} h(\bfx) \d \bfx\\
+&= \E[f(\bfX)/h(\bfX)]\\
+&\approx \frac{1}{n} \sum^{n}_{i=1} f(\bfX_i)/h(\bfX_i)
+\end{align*}
+
+
+%\bibliographystyle{apalike}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
+%% End:
