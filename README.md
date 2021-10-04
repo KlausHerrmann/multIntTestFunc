@@ -7,4 +7,4 @@ Details on the test functions and the value of their integral can be found in <a
 <!-- Probably doesn't work because the repository is private
 <a href="https://docs.google.com/viewer?url=https://github.com/KlausHerrmann/multIntTestFunc/blob/main/documentation_test_functions.pdf">document2</a>
 -->
-
+<a href="https://docs.google.com/viewer?url=https://github.com/KlausHerrmann/multIntTestFunc/blob/main/documentation_test_functions.pdf">document2</a>
