@@ -18,10 +18,13 @@
 #' @slot dim An integer that captures the dimension
 #' @slot a A \eqn{n}-dimensional real vector
 #' @slot b A \eqn{n}-dimensional real vector
+#' @include AllGeneric.R
+#' @export unitSphere_innerProduct1
+#' @exportClass unitSphere_innerProduct1
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitSphere_innerProduct1",dim=n,a=c(1,2,3),b=c(-1,-2,-3))
-setClass(Class="unitSphere_innerProduct1", representation=representation(dim="integer", a="vector", b="vector"))
+unitSphere_innerProduct1 <- setClass(Class="unitSphere_innerProduct1", representation=representation(dim="integer", a="vector", b="vector"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitSphere_innerProduct1",

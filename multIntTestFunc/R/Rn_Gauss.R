@@ -11,10 +11,13 @@
 #'
 #' The instance needs to be created with one parameter representing \eqn{n}.
 #' @slot dim An integer that captures the dimension
+#' @include AllGeneric.R
+#' @export Rn_Gauss
+#' @exportClass Rn_Gauss
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_Gauss",dim=n)
-setClass(Class="Rn_Gauss",representation=representation(dim="integer"))
+Rn_Gauss <- setClass(Class="Rn_Gauss",representation=representation(dim="integer"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","Rn_Gauss",function(object){

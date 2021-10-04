@@ -5,6 +5,7 @@
 ##' @param object The test function that gets evaluated
 ##' @return Numeric value of the integral of the test function
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("exactIntegral",def=function(object){standardGeneric("exactIntegral")})
 
 ##' Check if node points are in the domain of a test function instance
@@ -14,6 +15,7 @@ setGeneric("exactIntegral",def=function(object){standardGeneric("exactIntegral")
 ##' @param x Matrix where each row represents one evaluation point
 ##' @return Vector where each element (TRUE or FALSE) indicates if a point (row in the input matrix) is in the integration domain
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("domainCheck",def=function(object,x){standardGeneric("domainCheck")})
 
 ##' Check if node points are in the domain of a test function instance ("overload" of domainCheck with additional parameter)
@@ -25,6 +27,7 @@ setGeneric("domainCheck",def=function(object,x){standardGeneric("domainCheck")})
 ##' @param param List of additional parameters
 ##' @return Vector where each element (TRUE or FALSE) indicates if a point (row in the input matrix) is in the integration domain
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("domainCheckP",def=function(object,x,param){standardGeneric("domainCheckP")})
 
 ##' Evaluate test function instance for a set of node points
@@ -34,6 +37,7 @@ setGeneric("domainCheckP",def=function(object,x,param){standardGeneric("domainCh
 ##' @param x Matrix where each row represents one evaluation point
 ##' @return Vector where each element is an evaluation of the test function for a node point (row in x)
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("evaluate",def=function(object,x){standardGeneric("evaluate")})
 
 ##' Get tags for test function instance
@@ -42,6 +46,7 @@ setGeneric("evaluate",def=function(object,x){standardGeneric("evaluate")})
 ##' @param object Test function for which the tags are returned
 ##' @return Vector with tags related to the function
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("getTags",def=function(object){standardGeneric("getTags")})
 
 ##' Get description of integration area for test function instance
@@ -50,6 +55,7 @@ setGeneric("getTags",def=function(object){standardGeneric("getTags")})
 ##' @param object Test function for which the description is returned
 ##' @return Description of the integration area of the function
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("getIntegrationArea",def=function(object){standardGeneric("getIntegrationArea")})
 
 ##' Get references for test function instance
@@ -58,4 +64,5 @@ setGeneric("getIntegrationArea",def=function(object){standardGeneric("getIntegra
 ##' @param object Test function for which the references are returned
 ##' @return Vector with references for the specific function
 ##' @author Klaus Herrmann
+##' @export
 setGeneric("getReferences",def=function(object){standardGeneric("getReferences")})

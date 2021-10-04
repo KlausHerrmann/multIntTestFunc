@@ -12,10 +12,13 @@
 #' The instance needs to be created with two parameters representing the dimension \eqn{n} and the \eqn{n}-dimensional parameter vector where each entry is different from \eqn{0}.
 #' @slot dim An integer that captures the dimension
 #' @slot coeffs A vector of non-zero parameters
+#' @include AllGeneric.R
+#' @export unitCube_cos2
+#' @exportClass unitCube_cos2
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitCube_cos2",dim=n, coeffs=c(-1,2,-2))
-setClass(Class="unitCube_cos2",representation=representation(dim="integer",coeffs="vector"))
+unitCube_cos2 = setClass(Class="unitCube_cos2",representation=representation(dim="integer",coeffs="vector"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitCube_cos2",function(object){

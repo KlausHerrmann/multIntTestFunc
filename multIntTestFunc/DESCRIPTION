@@ -11,5 +11,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
+Collate: 
+    'AllGeneric.R'
+    'domainChecks.R'
+    'unitCube_cos2.R'

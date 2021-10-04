@@ -13,10 +13,13 @@
 #' The instance needs to be created with two parameters representing the dimension \eqn{n} and a \eqn{n}-dimensional vector of integers (including \eqn{0}) representing the exponents.
 #' @slot dim An integer that captures the dimension
 #' @slot expo An vector that captures the exponents
+#' @include AllGeneric.R
+#' @export unitBall_polynomial
+#' @exportClass unitBall_polynomial
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitBall_polynomial",dim=n,expo=c(1,2,3))
-setClass(Class="unitBall_polynomial", representation=representation(dim="integer", expo="vector"))
+unitBall_polynomial <- setClass(Class="unitBall_polynomial", representation=representation(dim="integer", expo="vector"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitBall_polynomial",

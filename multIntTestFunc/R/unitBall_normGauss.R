@@ -13,10 +13,13 @@
 #'
 #' The instance needs to be created with one parameter representing \eqn{n}.
 #' @slot dim An integer that captures the dimension
+#' @include AllGeneric.R
+#' @export unitBall_normGauss
+#' @exportClass unitBall_normGauss
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitBall_normGauss",dim=n)
-setClass(Class="unitBall_normGauss", representation=representation(dim="integer"))
+unitBall_normGauss <- setClass(Class="unitBall_normGauss", representation=representation(dim="integer"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitBall_normGauss",

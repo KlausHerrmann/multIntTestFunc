@@ -13,10 +13,13 @@
 #' The instance needs to be created with two parameters representing the dimension \eqn{n} and the parameter \eqn{c>0}.
 #' @slot dim An integer that captures the dimension
 #' @slot coeff A strictly positive number representing the constant
+#' @include AllGeneric.R
+#' @export standardSimplex_exp_sum
+#' @exportClass standardSimplex_exp_sum
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("standardSimplex_exp_sum",dim=n,coeff=1)
-setClass(Class="standardSimplex_exp_sum", representation=representation(dim="integer",coeff="numeric"))
+standardSimplex_exp_sum <- setClass(Class="standardSimplex_exp_sum", representation=representation(dim="integer",coeff="numeric"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","standardSimplex_exp_sum",

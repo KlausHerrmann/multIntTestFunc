@@ -13,10 +13,13 @@
 #' The instance needs to be created with two parameters representing \eqn{n} and \eqn{s}.
 #' @slot dim An integer that captures the dimension
 #' @slot s A numeric value bigger than 1 representing a power
+#' @include AllGeneric.R
+#' @export Rn_floorNorm
+#' @exportClass Rn_floorNorm
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_floorNorm",dim=n,s=2)
-setClass(Class="Rn_floorNorm",representation=representation(dim="integer",s="numeric"))
+Rn_floorNorm <- setClass(Class="Rn_floorNorm",representation=representation(dim="integer",s="numeric"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","Rn_floorNorm",function(object){

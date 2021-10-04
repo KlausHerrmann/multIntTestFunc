@@ -17,10 +17,13 @@
 #' The instance needs to be created with two parameters representing the dimension \eqn{n} and a \eqn{n}-dimensional vector of integers (including \eqn{0}) representing the exponents.
 #' @slot dim An integer that captures the dimension
 #' @slot expo An vector that captures the exponents
+#' @include AllGeneric.R
+#' @export unitSphere_polynomial
+#' @exportClass unitSphere_polynomial
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitSphere_polynomial",dim=n,expo=c(1,2,3))
-setClass(Class="unitSphere_polynomial", representation=representation(dim="integer",expo="vector"))
+unitSphere_polynomial <- setClass(Class="unitSphere_polynomial", representation=representation(dim="integer",expo="vector"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitSphere_polynomial",

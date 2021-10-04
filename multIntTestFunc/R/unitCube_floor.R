@@ -11,10 +11,13 @@
 #'
 #' The instance needs to be created with one parameter representing the dimension \eqn{n}.
 #' @slot dim An integer that captures the dimension
+#' @include AllGeneric.R
+#' @export unitCube_floor
+#' @exportClass unitCube_floor
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitCube_floor",dim=n)
-setClass(Class="unitCube_floor",representation=representation(dim="integer"))
+unitCube_floor <- setClass(Class="unitCube_floor",representation=representation(dim="integer"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitCube_floor",function(object){

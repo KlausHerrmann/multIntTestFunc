@@ -13,10 +13,13 @@
 #' The instance needs to be created with two parameters representing the dimension \eqn{n} and the vector of positive parameters.
 #' @slot dim An integer that captures the dimension
 #' @slot v A vector of dimension \eqn{n+1} with positive entries representing the constants
+#' @include AllGeneric.R
+#' @export standardSimplex_Dirichlet
+#' @exportClass standardSimplex_Dirichlet
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("standardSimplex_Dirichlet",dim=n,v=c(1,2,3,4))
-setClass(Class="standardSimplex_Dirichlet", representation=representation(dim="integer",v="vector"))
+standardSimplex_Dirichlet <- setClass(Class="standardSimplex_Dirichlet", representation=representation(dim="integer",v="vector"))
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","standardSimplex_Dirichlet",
