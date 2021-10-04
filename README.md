@@ -8,3 +8,8 @@ Details on the test functions and the value of their integral can be found in <a
 <a href="https://docs.google.com/viewer?url=https://github.com/KlausHerrmann/multIntTestFunc/blob/main/documentation_test_functions.pdf">document2</a>
 -->
 <a href="https://docs.google.com/viewer?url=https://github.com/KlausHerrmann/multIntTestFunc/blob/main/documentation_test_functions.pdf">document2</a>
+
+
+<a href="documentation_test_functions.pdf" class="image fit"><img src="images/marr_pic.jpg" alt="">test</a>
+
+
