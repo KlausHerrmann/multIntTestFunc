@@ -5,26 +5,28 @@ For each domain several functions with different properties (smooth, non-differe
 For each function the exact value of the integral is known and implemented to allow testing the accuracy of multivariate integration routines.
 Details on the test functions and the value of their integral can be found in <a href="documentation_test_functions.pdf">documentation_test_functions.pdf</a>.
 
-The key feature of the package is that it provides a unified object oriented interface 
+The key features of the package are
+- a unified, intuitive and object oriented interface;
+- that the implemented functions are available for any dimension n>= 1. This facilitates the test of high dimensional integration routines and allows to gauge the behaviour when the number of dimensions n changes;
+- that the package provides a number of different functions and integration domains.
 
-- implemented functions are available for any dimension n>= 1. This facilitates the test of high dimensional integration routines and allows to gauge the behaviour for changing number of dimensions n,
-- unified, intuitive and object oriented interface
-- a number of functions and integration domains
-
-## Example
+## Code example
 To define a test function, the keyword `new` is used together with the type of test function and the relevant parameters.
 For example, the class `Rn_Gauss` implements the function
 
-f(x<sub>1</sub>,...,x<sub>1</sub>) = exp(- &sum;<sub>k = 1</sub><sup>n</sup> x<sub>k</sub><sup>2</sup>)
+f(x<sub>1</sub>,...,x<sub>n</sub>) = exp(- &sum;<sub>k=1</sub><sup>n</sup>x<sub>k</sub><sup>2</sup>),
 
-for which
+for which the value of the integral is known to be
+ 
+&int;<sub>-&inf;</sub><sup>&inf;</sup> ... &int;<sub>-&inf;</sub><sup>&inf;</sup> f(x<sub>1</sub>,...,x<sub>n</sub>) dx<sub>1</sub> ... dx<sub>n</sub> = &pi;<sup>n/2</sup>.
 
-h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
-
+In R the function we can define the function, evaluate it for a given set of points and retrieve the theoretical value of the integral as folows: 
 ```r
 require(multIntTestFunc)
 n <- as.integer(3)
 testFunc <- new("Rn_Gauss",dim=n)
-
+testPoints <- matrix(c(0,0,0, 1,0,0, 0,1,0, 0,0,1),4,3,byrow = TRUE)
+eval <- evaluate(f,testPoints) #evaluate the function f
+print(exactIntegral(f))
 ```
 
