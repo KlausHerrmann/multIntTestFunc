@@ -19,6 +19,7 @@ Collate:
     'Rn_floorNorm.R'
     'domainChecks.R'
     'misc.R'
+    'multIntTestFunc.R'
     'standardSimplex_Dirichlet.R'
     'standardSimplex_exp_sum.R'
     'unitBall_normGauss.R'
