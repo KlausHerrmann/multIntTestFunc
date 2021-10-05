@@ -3,7 +3,7 @@ The package provides implementations of test functions for multivariate numerica
 The package covers five different integration domains (unit hypercube, unit ball, unit sphere, standard simplex and R^n).
 For each domain several functions with different properties (smooth, non-differentiable, ...) are available. The functions are available in all dimensions n >= 1.
 For each function the exact value of the integral is known and implemented to allow testing the accuracy of multivariate integration routines.
-Details on the test functions and the value of their integral can be found in <a href="documentation_test_functions.pdf">documentation_test_functions.pdf</a>.
+Details on the available test functions and the value of their integral can be found in <a href="documentation_test_functions.pdf">documentation_test_functions.pdf</a>.
 
 The key features of the package are
 - a unified, intuitive and object oriented interface;
@@ -18,7 +18,7 @@ f(x<sub>1</sub>,...,x<sub>n</sub>) = exp(- &sum;<sub>k=1</sub><sup>n</sup>x<sub>
 
 for which the value of the integral is known to be
  
-&int;<sub>-&inf;</sub><sup>&inf;</sup> ... &int;<sub>-&inf;</sub><sup>&inf;</sup> f(x<sub>1</sub>,...,x<sub>n</sub>) dx<sub>1</sub> ... dx<sub>n</sub> = &pi;<sup>n/2</sup>.
+&int;<sub>-&infin;</sub><sup>&infin;</sup> ... &int;<sub>-&infin;</sub><sup>&infin;</sup> f(x<sub>1</sub>,...,x<sub>n</sub>) dx<sub>1</sub> ... dx<sub>n</sub> = (&pi;)<sup>n/2</sup>.
 
 In R the function we can define the function, evaluate it for a given set of points and retrieve the theoretical value of the integral as folows: 
 ```r
@@ -27,6 +27,7 @@ n <- as.integer(3)
 testFunc <- new("Rn_Gauss",dim=n)
 testPoints <- matrix(c(0,0,0, 1,0,0, 0,1,0, 0,0,1),4,3,byrow = TRUE)
 eval <- evaluate(f,testPoints) #evaluate the function f
+print(eval)
 print(exactIntegral(f))
 ```
 
