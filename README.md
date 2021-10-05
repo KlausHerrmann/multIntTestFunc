@@ -20,14 +20,13 @@ for which the value of the integral is known to be
  
 &int;<sub>-&infin;</sub><sup>&infin;</sup> ... &int;<sub>-&infin;</sub><sup>&infin;</sup> f(x<sub>1</sub>,...,x<sub>n</sub>) dx<sub>1</sub> ... dx<sub>n</sub> = (&pi;)<sup>n/2</sup>.
 
-In R the function we can define the function, evaluate it for a given set of points and retrieve the theoretical value of the integral as folows: 
+In R we can define the function, evaluate it for a given set of points and retrieve the theoretical value of the integral as follows: 
 ```r
 require(multIntTestFunc)
 n <- as.integer(3)
-testFunc <- new("Rn_Gauss",dim=n)
-testPoints <- matrix(c(0,0,0, 1,0,0, 0,1,0, 0,0,1),4,3,byrow = TRUE)
-eval <- evaluate(f,testPoints) #evaluate the function f
+f <- new("Rn_Gauss",dim=n)
+x <- matrix(c(0,0,0, 1,0,0, 0,1,0, 0,0,1),4,3,byrow = TRUE)
+eval <- evaluate(f,x) #evaluate f(x) for x=(0,0,0), x=(1,0,0), x=(0,1,0) and x=(0,0,1)
 print(eval)
 print(exactIntegral(f))
 ```
-
