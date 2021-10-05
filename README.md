@@ -15,6 +15,10 @@ The key feature of the package is that it provides a unified object oriented int
 To define a test function, the keyword `new` is used together with the type of test function and the relevant parameters.
 For example, the class `Rn_Gauss` implements the function
 
+f(x<sub>1</sub>,...,x<sub>1</sub>) = exp(- &sum;<sub>k = 1</sub><sup>n</sup> x<sub>k</sub><sup>2</sup>)
+
+for which
+
 h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 
 ```r
