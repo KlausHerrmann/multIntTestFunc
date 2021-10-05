@@ -66,8 +66,8 @@ setMethod("getTags",c(object="unitBall_polynomial"),
           }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitBall_polynomial"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitBall_polynomial"),
           function(object){
             return("standard unit ball: ||x||_2 <= 1")
           }

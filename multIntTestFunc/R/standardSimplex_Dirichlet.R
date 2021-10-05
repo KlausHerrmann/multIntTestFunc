@@ -62,8 +62,8 @@ setMethod("getTags",c(object="standardSimplex_Dirichlet"),
     }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="standardSimplex_Dirichlet"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="standardSimplex_Dirichlet"),
     function(object){
     return("standard unit simplex: x_i >= 0, ||x||_1 <= 1")
     }

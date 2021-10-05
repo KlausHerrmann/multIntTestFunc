@@ -55,8 +55,8 @@ setMethod("getTags",c(object="Rn_floorNorm"),
     }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="Rn_floorNorm"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="Rn_floorNorm"),
     function(object){
     return("R^n = R x ... x R")
     }

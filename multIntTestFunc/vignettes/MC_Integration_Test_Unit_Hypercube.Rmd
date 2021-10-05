@@ -27,7 +27,7 @@ In total there are six methods that can be used for an instance.
 1. **exactIntegral** returns the exact integral of the test function over the domain. The value (generally) depends on the parameters that are set when the function (instance) is created. *The function also checks if the given parameters of the function are correctly specified*.
 2. **domainCheck** checks for each row in a given matrix if this point is inside the integration domain for a given function and returns a vector with Boolean values. This can be used to check if the node points of a multivariate integration routine are correctly specified. *The function checks if the input matrix has real entries and the correct dimensions. The function also checks if the given parameters of the function are correctly specified*.
 3. **evaluate** evaluates the function for each row of a given input matrix and returns a vector. Based on the evaluations the numerical integration can be performed. *The function checks if the input matrix has real entries and the correct dimensions. The function also checks if the given parameters of the function are correctly specified*.
-4. **getIntegrationArea** provides a string that represents the integration area for the function.
+4. **getIntegrationDomain** provides a string that represents the integration domain for the function.
 5. **getTags** provides a vector of strings with tags associated to the specific function.
 6. **getReferences** provides a vector of strings with references that provide more details for this function. The first entry provides the subsection number in the "Function_References.pdf" file that provides details on the specific function.
 
@@ -62,7 +62,7 @@ coeffs <- 1:n #get example coefficients
 f <- new("unitCube_cos2",coeffs=coeffs,dim=n) #create instance
 
 #print some information on the function
-print(getIntegrationArea(f))
+print(getIntegrationDomain(f))
 print(getTags(f))
 print(getReferences(f))
 

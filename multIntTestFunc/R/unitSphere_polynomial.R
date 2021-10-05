@@ -87,8 +87,8 @@ setMethod("getTags",c(object="unitSphere_polynomial"),
           }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitSphere_polynomial"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitSphere_polynomial"),
           function(object){
             return("standard unit Sphere: ||x||_2 = 1")
           }

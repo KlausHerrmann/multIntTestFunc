@@ -55,8 +55,8 @@ setMethod("getTags",c(object="unitCube_cos2"),
     }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitCube_cos2"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitCube_cos2"),
     function(object){
     return("standard unit hypercube: 0 <= x_i <= 1")
     }

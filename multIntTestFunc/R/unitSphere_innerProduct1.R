@@ -76,8 +76,8 @@ setMethod("getTags",c(object="unitSphere_innerProduct1"),
           }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitSphere_innerProduct1"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitSphere_innerProduct1"),
           function(object){
             return("standard unit Sphere: ||x||_2 = 1")
           }

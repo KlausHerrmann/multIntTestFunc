@@ -49,8 +49,8 @@ setMethod("getTags",c(object="Rn_Gauss"),
     }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="Rn_Gauss"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="Rn_Gauss"),
     function(object){
     return("R^n = R x ... x R")
     }

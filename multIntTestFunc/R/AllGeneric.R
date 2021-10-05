@@ -10,7 +10,7 @@ setGeneric("exactIntegral",def=function(object){standardGeneric("exactIntegral")
 
 ##' Check if node points are in the domain of a test function instance
 ##'
-##' domainCheck is a generic function that allows to test if a collection of evaluation points are inside the integration area associated to the test function instance or not.
+##' domainCheck is a generic function that allows to test if a collection of evaluation points are inside the integration domain associated to the test function instance or not.
 ##' @param object Test function that gets evaluated
 ##' @param x Matrix where each row represents one evaluation point
 ##' @return Vector where each element (TRUE or FALSE) indicates if a point (row in the input matrix) is in the integration domain
@@ -20,7 +20,7 @@ setGeneric("domainCheck",def=function(object,x){standardGeneric("domainCheck")})
 
 ##' Check if node points are in the domain of a test function instance ("overload" of domainCheck with additional parameter)
 ##'
-##' domainCheckP is a generic function that allows to test if a collection of evaluation points are inside the integration area associated to the test function instance or not.
+##' domainCheckP is a generic function that allows to test if a collection of evaluation points are inside the integration domain associated to the test function instance or not.
 ##' This "overload" of domainCheck allows to pass a list of additional parameters.
 ##' @param object Test function that gets evaluated
 ##' @param x Matrix where each row represents one evaluation point
@@ -49,14 +49,14 @@ setGeneric("evaluate",def=function(object,x){standardGeneric("evaluate")})
 ##' @export
 setGeneric("getTags",def=function(object){standardGeneric("getTags")})
 
-##' Get description of integration area for test function instance
+##' Get description of integration domain for test function instance
 ##'
-##' getIntegrationArea is a generic function that returns a description of the integration area associate to the test function instance.
+##' getIntegrationDomain is a generic function that returns a description of the integration domain associate to the test function instance.
 ##' @param object Test function for which the description is returned
-##' @return Description of the integration area of the function
+##' @return Description of the integration domain of the function
 ##' @author Klaus Herrmann
 ##' @export
-setGeneric("getIntegrationArea",def=function(object){standardGeneric("getIntegrationArea")})
+setGeneric("getIntegrationDomain",def=function(object){standardGeneric("getIntegrationDomain")})
 
 ##' Get references for test function instance
 ##'

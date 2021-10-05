@@ -58,8 +58,8 @@ setMethod("getTags",c(object="unitBall_normGauss"),
           }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitBall_normGauss"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitBall_normGauss"),
           function(object){
             return("standard unit ball: ||x||_2 <= 1")
           }

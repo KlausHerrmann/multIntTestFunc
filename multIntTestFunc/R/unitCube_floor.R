@@ -50,8 +50,8 @@ setMethod("getTags",c(object="unitCube_floor"),
     }
 )
 
-#' @rdname getIntegrationArea
-setMethod("getIntegrationArea",c(object="unitCube_floor"),
+#' @rdname getIntegrationDomain
+setMethod("getIntegrationDomain",c(object="unitCube_floor"),
     function(object){
     return("standard unit hypercube: 0 <= x_i <= 1")
     }

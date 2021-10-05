@@ -15,5 +15,15 @@ Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 Collate: 
     'AllGeneric.R'
+    'Rn_Gauss.R'
+    'Rn_floorNorm.R'
     'domainChecks.R'
+    'misc.R'
+    'standardSimplex_Dirichlet.R'
+    'standardSimplex_exp_sum.R'
+    'unitBall_normGauss.R'
+    'unitBall_polynomial.R'
     'unitCube_cos2.R'
+    'unitCube_floor.R'
+    'unitSphere_innerProduct1.R'
+    'unitSphere_polynomial.R'
