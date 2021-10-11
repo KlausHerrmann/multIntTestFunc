@@ -29,7 +29,7 @@ In total there are six methods that can be used for an instance.
 3. **evaluate** evaluates the function for each row of a given input matrix and returns a vector. Based on the evaluations the numerical integration can be performed. *The function checks if the input matrix has real entries and the correct dimensions. The function also checks if the given parameters of the function are correctly specified*.
 4. **getIntegrationDomain** provides a string that represents the integration domain for the function.
 5. **getTags** provides a vector of strings with tags associated to the specific function.
-6. **getReferences** provides a vector of strings with references that provide more details for this function. The first entry provides the subsection number in the "Function_References.pdf" file that provides details on the specific function.
+6. **getReferences** provides a vector of strings with references that provide more details for this function. The first entry provides the subsection number in the "documentation_test_functions.pdf" file that provides details on the specific function.
 
 **Warning: The numerical integration scheme utilised in the following section is only used to showcase the package and its functions. It is not intended as an examples of a "best practice" when it comes to multivariate numerical integration.**
 
