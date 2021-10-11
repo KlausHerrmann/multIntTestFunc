@@ -195,6 +195,18 @@ we have, see \cite{IntegralFloorCube}, that
 \end{align*}
 %
 %
+\subsection*{C.3\hspace{0.5cm}Maximum}
+\addcontentsline{toc}{subsection}{C.3\hspace{0.5cm}Maximum}
+For the function
+\begin{align*}
+f\colon C_{n}\to\R, \bx \mapsto f(\bx) = \max(x_1,\ldots,x_n)
+\end{align*}
+we have, see \cite{IntegralCubeMax}, that
+\begin{align*}
+\int_{C_{n}} f(\bx) \d\bx = \frac{n}{n+1}.
+\end{align*}
+%
+%
 %
 %\newpage
 %
@@ -338,7 +350,8 @@ unitCube\_ & Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
 \rule{0pt}{4ex}
 cos2 & $n \in \N$, $\bfv \in \R^n \setminus \mathbf{0}_n$ & $\left(\cos(\bfv\cdot\bfx)\right)^2$ & $\frac{1}{2}+\frac{1}{2}\cos(\bfv\cdot\mathbf{1}_n)\prod_{k=1}^{n}\frac{\sin(v_k)}{v_k}$ & $C^{\infty}$ & C.1\\
 \rule{0pt}{4ex}
-floor & $n \in \N$ & $\floor{x_1+\ldots+x_n}$ & $(n-1)/2$ & non-continuous & C.2\\
+floor & $n \in \N$ & $\floor{x_1+\ldots+x_n}$ & $(n-1)/2$ & non-continuous & C.2\\\rule{0pt}{4ex}
+max & $n \in \N$ & $\max(x_1,\ldots,x_n)$ & $n/(n+1)$ & continuous, non-differentiable & C.3\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $C_n=[0,1]^n$.}

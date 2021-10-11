@@ -2,7 +2,8 @@
 % Please edit documentation in R/AllGeneric.R, R/Rn_Gauss.R, R/Rn_floorNorm.R,
 %   R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
 %   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
+%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
+%   R/unitSphere_polynomial.R
 \name{exactIntegral}
 \alias{exactIntegral}
 \alias{exactIntegral,Rn_Gauss-method}
@@ -13,6 +14,7 @@
 \alias{exactIntegral,unitBall_polynomial-method}
 \alias{exactIntegral,unitCube_cos2-method}
 \alias{exactIntegral,unitCube_floor-method}
+\alias{exactIntegral,unitCube_max-method}
 \alias{exactIntegral,unitSphere_innerProduct1-method}
 \alias{exactIntegral,unitSphere_polynomial-method}
 \title{Get exact integral for test function instance}
@@ -34,6 +36,8 @@ exactIntegral(object)
 \S4method{exactIntegral}{unitCube_cos2}(object)
 
 \S4method{exactIntegral}{unitCube_floor}(object)
+
+\S4method{exactIntegral}{unitCube_max}(object)
 
 \S4method{exactIntegral}{unitSphere_innerProduct1}(object)
 

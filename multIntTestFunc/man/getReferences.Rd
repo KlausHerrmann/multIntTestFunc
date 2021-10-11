@@ -2,7 +2,8 @@
 % Please edit documentation in R/AllGeneric.R, R/Rn_Gauss.R, R/Rn_floorNorm.R,
 %   R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
 %   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
+%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
+%   R/unitSphere_polynomial.R
 \name{getReferences}
 \alias{getReferences}
 \alias{getReferences,Rn_Gauss-method}
@@ -13,6 +14,7 @@
 \alias{getReferences,unitBall_polynomial-method}
 \alias{getReferences,unitCube_cos2-method}
 \alias{getReferences,unitCube_floor-method}
+\alias{getReferences,unitCube_max-method}
 \alias{getReferences,unitSphere_innerProduct1-method}
 \alias{getReferences,unitSphere_polynomial-method}
 \title{Get references for test function instance}
@@ -34,6 +36,8 @@ getReferences(object)
 \S4method{getReferences}{unitCube_cos2}(object)
 
 \S4method{getReferences}{unitCube_floor}(object)
+
+\S4method{getReferences}{unitCube_max}(object)
 
 \S4method{getReferences}{unitSphere_innerProduct1}(object)
 

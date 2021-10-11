@@ -2,7 +2,8 @@
 % Please edit documentation in R/AllGeneric.R, R/Rn_Gauss.R, R/Rn_floorNorm.R,
 %   R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
 %   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
+%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
+%   R/unitSphere_polynomial.R
 \name{getTags}
 \alias{getTags}
 \alias{getTags,Rn_Gauss-method}
@@ -13,6 +14,7 @@
 \alias{getTags,unitBall_polynomial-method}
 \alias{getTags,unitCube_cos2-method}
 \alias{getTags,unitCube_floor-method}
+\alias{getTags,unitCube_max-method}
 \alias{getTags,unitSphere_innerProduct1-method}
 \alias{getTags,unitSphere_polynomial-method}
 \title{Get tags for test function instance}
@@ -34,6 +36,8 @@ getTags(object)
 \S4method{getTags}{unitCube_cos2}(object)
 
 \S4method{getTags}{unitCube_floor}(object)
+
+\S4method{getTags}{unitCube_max}(object)
 
 \S4method{getTags}{unitSphere_innerProduct1}(object)
 

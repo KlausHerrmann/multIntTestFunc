@@ -2,7 +2,8 @@
 % Please edit documentation in R/AllGeneric.R, R/Rn_Gauss.R, R/Rn_floorNorm.R,
 %   R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
 %   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
+%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
+%   R/unitSphere_polynomial.R
 \name{getIntegrationDomain}
 \alias{getIntegrationDomain}
 \alias{getIntegrationDomain,Rn_Gauss-method}
@@ -13,6 +14,7 @@
 \alias{getIntegrationDomain,unitBall_polynomial-method}
 \alias{getIntegrationDomain,unitCube_cos2-method}
 \alias{getIntegrationDomain,unitCube_floor-method}
+\alias{getIntegrationDomain,unitCube_max-method}
 \alias{getIntegrationDomain,unitSphere_innerProduct1-method}
 \alias{getIntegrationDomain,unitSphere_polynomial-method}
 \title{Get description of integration domain for test function instance}
@@ -34,6 +36,8 @@ getIntegrationDomain(object)
 \S4method{getIntegrationDomain}{unitCube_cos2}(object)
 
 \S4method{getIntegrationDomain}{unitCube_floor}(object)
+
+\S4method{getIntegrationDomain}{unitCube_max}(object)
 
 \S4method{getIntegrationDomain}{unitSphere_innerProduct1}(object)
 

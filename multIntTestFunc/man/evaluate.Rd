@@ -2,7 +2,8 @@
 % Please edit documentation in R/AllGeneric.R, R/Rn_Gauss.R, R/Rn_floorNorm.R,
 %   R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
 %   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
+%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
+%   R/unitSphere_polynomial.R
 \name{evaluate}
 \alias{evaluate}
 \alias{evaluate,Rn_Gauss,matrix-method}
@@ -13,6 +14,7 @@
 \alias{evaluate,unitBall_polynomial,matrix-method}
 \alias{evaluate,unitCube_cos2,matrix-method}
 \alias{evaluate,unitCube_floor,matrix-method}
+\alias{evaluate,unitCube_max,matrix-method}
 \alias{evaluate,unitSphere_innerProduct1,matrix-method}
 \alias{evaluate,unitSphere_polynomial,matrix-method}
 \title{Evaluate test function instance for a set of node points}
@@ -34,6 +36,8 @@ evaluate(object, x)
 \S4method{evaluate}{unitCube_cos2,matrix}(object, x)
 
 \S4method{evaluate}{unitCube_floor,matrix}(object, x)
+
+\S4method{evaluate}{unitCube_max,matrix}(object, x)
 
 \S4method{evaluate}{unitSphere_innerProduct1,matrix}(object, x)
 
