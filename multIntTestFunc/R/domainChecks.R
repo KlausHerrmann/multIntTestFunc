@@ -91,4 +91,21 @@ checkRn <- function(x){
   return(rep(TRUE,length=nrow(x)))
 }
 
+#' Domain check for \eqn{[0,\infty)^n }
+#'
+#' The function checks if a point (one row in the input argument) is inside \eqn{[0,\infty)^n = \times_{i=1}^n [0,\infty)} or not.
+#' In this case the return values are all TRUE.
+#' If the input matrix contains entries that are not numeric, i.e., not representing real numbers, the function throws an error.
+#' The dimension \eqn{n} is automatically inferred from the input matrix and is equal to the number of columns.
+#' @param x Matrix with numeric entries. Each row represents one point
+#' @return Vector where each element (TRUE or FALSE) indicates if a point is in [0,\infty)^n
+#' @examples
+#' x <- matrix(rexp(30,rate=1),10,3)
+#' checkPos(x)
+#' @export
+checkPos <- function(x){
+  stopifnot(is.numeric(x)==TRUE)
+  apply( x >= 0, 1, min)
+}
+
 

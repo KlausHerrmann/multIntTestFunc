@@ -57,6 +57,7 @@ For each function there is either a derivation of the exact value of the integra
 The functions are sorted by integration domains and Tables~\ref{table_Rn}--\ref{table_sphere} provide an overview over the test functions for the supported domains at the end of the document.
 The available integration domains are
 \begin{itemize}
+	\item the non-negative real numbers $[0,\infty)^n$ (Section~P),
 	\item the Euclidean space $\R^n$ (Section~R),
 	\item the standard simplex $T_n$ (Section~T),
 	\item the unit hypercube $C_n$ (Section~C),
@@ -68,6 +69,17 @@ For shorthand notation we use $\cdot$ for inner products, i.e., $\ba\cdot\bb = \
 %
 %
 %\newpage
+%
+%
+%
+\section*{P\hspace{0.5cm}Non-negative real numbers $[0,\infty)^n = \times_{i=1}^{n} [0,\infty)$}
+\addcontentsline{toc}{section}{P\hspace{0.5cm}Non-negative real numbers $[0,\infty)^n = \times_{i=1}^{n} [0,\infty)$}
+\subsection*{P.1\hspace{0.5cm}--}
+\addcontentsline{toc}{subsection}{P.1\hspace{0.5cm}--}
+Consider the function
+\subsection*{P.2\hspace{0.5cm}--}
+\addcontentsline{toc}{subsection}{P.2\hspace{0.5cm}--}
+Consider the function
 %
 %
 %
@@ -293,7 +305,32 @@ For $n=1$ we have $S^{n-1} = \{-1,1\}$ and therefore the integral is zero.
 \addcontentsline{toc}{section}{Tables of Integration Functions}
 The following Tables~\ref{table_Rn}--\ref{table_sphere} provide an overview over the available functions by integration domain.
 The first column shows the S4 class name within the package, while the last column provides a reference to the relevant subsection in this document.
-
+%
+%
+%
+\begin{landscape}
+\begin{table}
+\center
+\begin{tabular}{llllll}
+%{p{2.0cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+\hline\hline
+\rule{0pt}{3ex}
+Pn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
+\hline
+\rule{0pt}{4ex}
+-- & -- & -- & -- & -- & P.1\\
+\rule{0pt}{4ex}
+-- & -- & -- & -- & -- & P.2\\
+\hline\hline
+\end{tabular}
+\caption{Functions with integration domain $[0,\infty)^n$.}
+\label{table_Pn}
+\end{table}
+\end{landscape}
+%
+%
+%
+%
 %
 \begin{landscape}
 \begin{table}
