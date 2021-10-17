@@ -33,6 +33,7 @@ print(exactIntegral(f))
 
 ## Installation
 The stable version of the package is available on CRAN at <a href="https://cran.r-project.org/web/packages/multIntTestFunc/index.html">https://cran.r-project.org/web/packages/multIntTestFunc/index.html</a> and can be installed as usual.
+
 To install the latest version from GitHub either clone the repository with git or download the ZIP file.
 In both cases stick with the `main` branch.
 In R navigate with `setwd` to the sub-folder `multIntTestFunc` and run
