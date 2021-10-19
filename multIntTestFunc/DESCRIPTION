@@ -14,8 +14,10 @@ Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 Collate: 
     'AllGeneric.R'
+    'Pn_lognormalDensity.R'
     'Rn_Gauss.R'
     'Rn_floorNorm.R'
+    'Rn_normalDensity.R'
     'domainChecks.R'
     'misc.R'
     'multIntTestFunc.R'

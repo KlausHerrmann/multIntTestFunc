@@ -74,12 +74,18 @@ For shorthand notation we use $\cdot$ for inner products, i.e., $\ba\cdot\bb = \
 %
 \section*{P\hspace{0.5cm}Non-negative real numbers $[0,\infty)^n = \times_{i=1}^{n} [0,\infty)$}
 \addcontentsline{toc}{section}{P\hspace{0.5cm}Non-negative real numbers $[0,\infty)^n = \times_{i=1}^{n} [0,\infty)$}
-\subsection*{P.1\hspace{0.5cm}--}
-\addcontentsline{toc}{subsection}{P.1\hspace{0.5cm}--}
+\subsection*{P.1\hspace{0.5cm}log-normal density}
+\addcontentsline{toc}{subsection}{P.1\hspace{0.5cm}log-normal density}\label{lognormal}
 Consider the function
-\subsection*{P.2\hspace{0.5cm}--}
-\addcontentsline{toc}{subsection}{P.2\hspace{0.5cm}--}
-Consider the function
+\begin{align*}
+f\colon [0,\infty)^n\to[0,\infty), \bx \mapsto f(\bx) =\frac{\exp(-((\ln(\bx)-\mu)^{T}\Sigma^{-1}(\ln(\bx)-\mu))/2)}{\prod_{i=1}^{n}x_i \sqrt{(2\pi)^n\det(\Sigma)}}.
+\end{align*}
+This is the density function of the log-normal distribution.
+Therefore
+\begin{align*}
+\int_{[0,\infty)^n} f(\bx) \d \bx = 1.
+\end{align*}
+The $n$-dimensional vector $\mu$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the mean and variance-covariance matrix of a multivariate normal random vector.
 %
 %
 %
@@ -127,6 +133,21 @@ Therefore
 &= \sum^{\infty}_{k=1} \frac{1}{k^s} = \zeta(s),
 \end{align*}
 where $\zeta$ is the Riemann zeta function.
+%
+%
+%
+\subsection*{R.3\hspace{0.5cm}Multivariate normal density}
+\addcontentsline{toc}{subsection}{R.3\hspace{0.5cm}Multivariate normal density}
+Consider the function
+\begin{align*}
+f\colon \R^n\to[0,\infty), \bx \mapsto f(\bx) =\frac{\exp(-((\bx-\mu)^{T}\Sigma^{-1}(\bx-\mu))/2)}{\sqrt{(2\pi)^n\det(\Sigma)}}.
+\end{align*}
+This is the density function of the multivariate normal distribution.
+Therefore
+\begin{align*}
+\int_{\R^n} f(\bx) \d \bx = 1.
+\end{align*}
+The $n$-dimensional vector $\mu$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the respective mean and variance-covariance matrix.
 %
 %
 %
@@ -318,9 +339,9 @@ The first column shows the S4 class name within the package, while the last colu
 Pn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
 \hline
 \rule{0pt}{4ex}
--- & -- & -- & -- & -- & P.1\\
-\rule{0pt}{4ex}
--- & -- & -- & -- & -- & P.2\\
+lognormalDensity & $n,\in\N,\mu\in\R^n, \Sigma\in\R^{n\times n}$ & $\frac{\exp(-((\ln(\bx)-\mu)^{T}\Sigma^{-1}(\ln(\bx)-\mu))/2)}{\prod_{i=1}^{n}x_i \sqrt{(2\pi)^n\det(\Sigma)}}$ & $1.0$ & $C^{\infty}$ & P.1\\
+%\rule{0pt}{4ex}
+%-- & -- & -- & -- & -- & P.2\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $[0,\infty)^n$.}
@@ -345,6 +366,7 @@ Rn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
 Gauss & $n \in \N$ & $\exp(-\xNorm{\bfx}{2}^2)$ & $\pi^{n/2}$ & $C^{\infty}$ & R.1\\
 \rule{0pt}{4ex}
 floorNorm & $n \in \N$, $s > 1$ & $\frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\floor{\Vert \bfx \Vert_2^n})^s}$ & $\zeta(s)$ & non-continuous & R.2\\
+normalDenisty & $n,\in\N,\mu\in\R^n, \Sigma\in\R^{n\times n}$ & $\frac{\exp(-((\bx-\mu)^{T}\Sigma^{-1}(\bx-\mu))/2)}{\sqrt{(2\pi)^n\det(\Sigma)}}$ & $1.0$ & $C^{\infty}$ & R.3\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $\R^n$.}
