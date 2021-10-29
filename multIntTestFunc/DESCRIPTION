@@ -1,10 +1,10 @@
 Package: multIntTestFunc
 Type: Package
 Title: Provides Test Functions for Multivariate Integration
-Version: 0.1.2
+Version: 0.1.3
 Author: Klaus Herrmann [aut, cre]
 Maintainer: Klaus Herrmann <klaus.herrmann@usherbrooke.ca>
-Description: Provides implementations of functions that can be used to test multivariate integration routines. The package covers five different integration domains (unit hypercube, unit ball, unit sphere, standard simplex and R^n). For each domain several functions with different properties (smooth, non-differentiable, ...) are available. The functions are available in all dimensions n >= 1. For each function the exact value of the integral is known and implemented to allow testing the accuracy of multivariate integration routines. Details on the available test functions can be found at on the development website.
+Description: Provides implementations of functions that can be used to test multivariate integration routines. The package covers five different integration domains (unit hypercube, unit ball, unit sphere, standard simplex, non-negative real numbers and R^n). For each domain several functions with different properties (smooth, non-differentiable, ...) are available. The functions are available in all dimensions n >= 1. For each function the exact value of the integral is known and implemented to allow testing the accuracy of multivariate integration routines. Details on the available test functions can be found at on the development website.
 URL: https://github.com/KlausHerrmann/multIntTestFunc
 Imports: gsl, pracma, methods, mvtnorm
 License: MIT + file LICENSE
@@ -15,9 +15,11 @@ VignetteBuilder: knitr
 Collate: 
     'AllGeneric.R'
     'Pn_lognormalDensity.R'
+    'Pn_logtDensity.R'
     'Rn_Gauss.R'
     'Rn_floorNorm.R'
     'Rn_normalDensity.R'
+    'Rn_tDensity.R'
     'domainChecks.R'
     'misc.R'
     'multIntTestFunc.R'

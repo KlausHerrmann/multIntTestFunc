@@ -10,7 +10,7 @@ checkPos(x)
 \item{x}{Matrix with numeric entries. Each row represents one point}
 }
 \value{
-Vector where each element (TRUE or FALSE) indicates if a point is in [0,\infty)^n
+Vector where each element (TRUE or FALSE) indicates if a point is in \eqn{[0,\infty)^n}
 }
 \description{
 The function checks if a point (one row in the input argument) is inside \eqn{[0,\infty)^n = \times_{i=1}^n [0,\infty)} or not.

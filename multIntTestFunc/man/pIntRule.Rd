@@ -7,15 +7,15 @@
 pIntRule(x, dim = NULL)
 }
 \arguments{
-\item{x}{Either a list with two elements $nodes and $weights representing a one dimensionsal quadrature formula which are used for all dimensions, or a list where each element is a itself a list with two elements $nodes and $weights. Then for each dimension the respective quadrature rule is used.}
+\item{x}{Either a list with two elements $nodes and $weights representing a one dimensional quadrature formula which are then used for all dimensions, or a list where each element is a itself a list with two elements $nodes and $weights. In this case the respective quadrature rule is used for each dimension.}
 
-\item{dim}{An integer that defines the dimension of the output quadrature formula. Default is NULL. If dim is NULL then x has to be a list of quadrature rules (list of lists) and the dimensions is automatically generated.}
+\item{dim}{An integer that defines the dimension of the output quadrature formula. Default is NULL. If dim is NULL then x has to be a list of quadrature rules (list of lists) and the dimensions is automatically generated. If dim is a positive integer value the same quadrature rule is used in all dimensions.}
 }
 \value{
 A list with a matrix of multivariate node points (each row is one point) and a vector of corresponding weights
 }
 \description{
-Product rule for numerical quadrature from univariate nodes and weights
+The function allows to build a multivariate quadrature rule from univariate ones. The multivariate node points are all possible combinations of the univariate node points, and the final weights are the product of the respective univariate weights.
 }
 \examples{
 require(statmod)

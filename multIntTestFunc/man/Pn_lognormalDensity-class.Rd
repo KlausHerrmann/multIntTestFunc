@@ -4,10 +4,10 @@
 \name{Pn_lognormalDensity-class}
 \alias{Pn_lognormalDensity-class}
 \alias{Pn_lognormalDensity}
-\title{An S4 class to represent the function \eqn{\frac{1}{\prod_{i=1}^{n}x_i \sqrt{(2\pi)^n\det(\Sigma)}}\exp(-((\vec{x}-\vec{\mu})^{T}\Sigma^{-1}(\vec{x}-\vec{\mu}))/2)} on \eqn{[0,\infty)^n}}
+\title{An S4 class to represent the function \eqn{\frac{1}{(\prod_{i=1}^{n}x_i) \sqrt{(2\pi)^n\det(\Sigma)}}\exp(-((\ln(\vec{x})-\vec{\mu})^{T}\Sigma^{-1}(\ln(\vec{x})-\vec{\mu}))/2)} on \eqn{[0,\infty)^n}}
 \description{
 Implementation of the function
-\deqn{f \colon R^n \to (0,\infty),\, \vec{x} \mapsto f(\vec{x}) = \frac{1}{\prod_{i=1}^{n}x_i \sqrt{(2\pi)^n\det(\Sigma)}}\exp(-((\vec{x}-\vec{\mu})^{\tr}\Sigma^{-1}(\vec{x}-\vec{\mu}))/2),}
+\deqn{f \colon R^n \to [0,\infty),\, \vec{x} \mapsto f(\vec{x}) = \frac{1}{(\prod_{i=1}^{n}x_i) \sqrt{(2\pi)^n\det(\Sigma)}}\exp(-((\ln(\vec{x})-\vec{\mu})^{T}\Sigma^{-1}(\ln(\vec{x})-\vec{\mu}))/2),}
 where \eqn{n \in \{1,2,3,\ldots\}} is the dimension of the integration domain \eqn{[0,\infty)^n = \times_{i=1}^n [0,\infty)}.
 In this case the integral is know to be
 \deqn{\int_{R^n} f(\vec{x}) d\vec{x} = 1.}

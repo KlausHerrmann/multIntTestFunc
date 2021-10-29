@@ -2,7 +2,7 @@
 % Please edit documentation in R/domainChecks.R
 \name{checkUnitSphere}
 \alias{checkUnitSphere}
-\title{Domain check for unit sphere \eqn{\{\vec{x} \in R^n : \Vert x \Vert_2 = 1\}}}
+\title{Domain check for unit sphere \eqn{\{\vec{x} \in R^n : \Vert \vec{x} \Vert_{2} = 1\}}}
 \usage{
 checkUnitSphere(x, eps = 0)
 }
@@ -15,10 +15,10 @@ checkUnitSphere(x, eps = 0)
 Vector where each element (TRUE or FALSE) indicates if a point is in the unit sphere
 }
 \description{
-The function checks if a point (one row in the input argument) is inside the unit sphere \eqn{\{\vec{x} \in R^n : \Vert x \Vert_2 = 1\}} or not.
+The function checks if a point (one row in the input argument) is inside the unit sphere \eqn{\{\vec{x} \in R^n : \Vert \vec{x} \Vert_2 = 1\}} or not.
 If the input matrix contains entries that are not numeric, i.e., not representing real numbers, the function throws an error.
 The dimension \eqn{n} is automatically inferred from the input matrix and is equal to the number of columns.
-The function allows for an additional parameter \eqn{\varepsilon\geq 0} to test \eqn{\{\vec{x} \in R^n : 1-\varepsilon \leq \Vert x \Vert_2 \leq 1 + \varepsilon\}}.
+The function allows for an additional parameter \eqn{\varepsilon\geq 0} to test \eqn{\{\vec{x} \in R^n : 1-\varepsilon \leq \Vert \vec{x} \Vert_2 \leq 1 + \varepsilon\}}.
 WARNING: Due to floating point arithmetic the default value of \eqn{\varepsilon=0} will not work properly in most cases.
 }
 \examples{
