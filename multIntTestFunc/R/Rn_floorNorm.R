@@ -4,7 +4,7 @@
 #' An S4 class to represent the function \eqn{\frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\lfloor \Vert \vec{x} \Vert_2^n \rfloor)^s}} on \eqn{R^n}
 #'
 #' Implementation of the function
-#' \deqn{f \colon R^n \to [1,\infty),\, \vec{x} \mapsto f(\vec{x}) = \frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\lfloor \Vert \vec{x} \Vert_2^n \rfloor)^s},}
+#' \deqn{f \colon R^n \to [0,\infty),\, \vec{x} \mapsto f(\vec{x}) = \frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\lfloor \Vert \vec{x} \Vert_2^n \rfloor)^s},}
 #' where \eqn{n \in \{1,2,3,\ldots\}} is the dimension of the integration domain \eqn{R^n = \times_{i=1}^n R} and \eqn{s>1} is a paramter.
 #' In this case the integral is know to be
 #' \deqn{\int_{R^n} f(\vec{x}) d\vec{x} = \zeta(s),}

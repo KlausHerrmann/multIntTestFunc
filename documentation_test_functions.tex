@@ -88,6 +88,22 @@ Therefore
 The $n$-dimensional vector $\mu$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the mean and variance-covariance matrix of a multivariate normal random vector.
 %
 %
+\subsection*{P.2\hspace{0.5cm}log-$t$ density}
+\addcontentsline{toc}{subsection}{P.2\hspace{0.5cm}log-$t$ density}\label{logt}
+Consider the function
+\begin{align*}
+f\colon &[0,\infty)^n\to[0,\infty),\\
+&\bx \mapsto f(\bx) = \frac{(\prod_{i=1}^n x_i^{-1})\Gamma\left[(\nu+n)/2\right]}{\Gamma(\nu/2)\nu^{n/2}\pi^{n/2}\left|{\Sigma}\right|^{1/2}}\left[1+\frac{1}{\nu}({\log(\bx)}-{\delta})^{T}{\Sigma}^{-1}({\log(\bx)}-{\delta})\right]^{-(\nu+n)/2}
+\end{align*}
+This is the density function of the log-t distribution.
+Therefore
+\begin{align*}
+\int_{[0,\infty)^n} f(\bx) \d \bx = 1.
+\end{align*}
+The $n$-dimensional vector $\delta$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the location and scale matrix of a multivariate log-$t$ random vector.
+The positive real number $\nu$ is the degrees-of-freedom parameter.
+%
+%
 %
 \section*{R\hspace{0.5cm}Euclidean Space $\R^n = \times_{i=1}^{n} \R$}
 \addcontentsline{toc}{section}{R\hspace{0.5cm}Euclidean Space $\R^n = \times_{i=1}^{n} \R$}
@@ -148,6 +164,22 @@ Therefore
 \int_{\R^n} f(\bx) \d \bx = 1.
 \end{align*}
 The $n$-dimensional vector $\mu$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the respective mean and variance-covariance matrix.
+%
+%
+%
+\subsection*{R.4\hspace{0.5cm}Multivariate $t$ density}
+\addcontentsline{toc}{subsection}{R.4\hspace{0.5cm}Multivariate $t$ density}
+Consider the function
+\begin{align*}
+f\colon \R^n\to[0,\infty), \bx \mapsto f(\bx) = \frac{\Gamma\left[(\nu+n)/2\right]}{\Gamma(\nu/2)\nu^{n/2}\pi^{n/2}\left|{\Sigma}\right|^{1/2}}\left[1+\frac{1}{\nu}({\bx}-{\delta})^{T}{\Sigma}^{-1}({\bx}-{\delta})\right]^{-(\nu+n)/2}.
+\end{align*}
+This is the density function of the multivariate $t$ distribution.
+Therefore
+\begin{align*}
+\int_{\R^n} f(\bx) \d \bx = 1.
+\end{align*}
+The $n$-dimensional vector $\delta$ and the symmetric positive definite matrix $\Sigma\in\R^{n\times n}$ are the respective location vector and scale matrix.
+The positive real number $\nu$ is the degrees-of-freedom parameter.
 %
 %
 %
@@ -324,7 +356,7 @@ For $n=1$ we have $S^{n-1} = \{-1,1\}$ and therefore the integral is zero.
 %
 \section*{Tables of Integration Functions}
 \addcontentsline{toc}{section}{Tables of Integration Functions}
-The following Tables~\ref{table_Rn}--\ref{table_sphere} provide an overview over the available functions by integration domain.
+The following Tables~\ref{table_Pn}--\ref{table_sphere} provide an overview over the available functions by integration domain.
 The first column shows the S4 class name within the package, while the last column provides a reference to the relevant subsection in this document.
 %
 %
@@ -340,8 +372,8 @@ Pn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
 \hline
 \rule{0pt}{4ex}
 lognormalDensity & $n,\in\N,\mu\in\R^n, \Sigma\in\R^{n\times n}$ & $\frac{\exp(-((\ln(\bx)-\mu)^{T}\Sigma^{-1}(\ln(\bx)-\mu))/2)}{\prod_{i=1}^{n}x_i \sqrt{(2\pi)^n\det(\Sigma)}}$ & $1.0$ & $C^{\infty}$ & P.1\\
-%\rule{0pt}{4ex}
-%-- & -- & -- & -- & -- & P.2\\
+\rule{0pt}{4ex}
+logtDensity & $n,\in\N,\delta\in\R^n, \Sigma\in\R^{n\times n},\nu>0$ & (see P.2) & $1.0$ & $C^{\infty}$ & P.2\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $[0,\infty)^n$.}
@@ -366,7 +398,8 @@ Rn\_& Parameters &  $f(\bfx)=$ & exact value & Properties & Details\\
 Gauss & $n \in \N$ & $\exp(-\xNorm{\bfx}{2}^2)$ & $\pi^{n/2}$ & $C^{\infty}$ & R.1\\
 \rule{0pt}{4ex}
 floorNorm & $n \in \N$, $s > 1$ & $\frac{\Gamma(n/2+1)}{\pi^{n/2}(1+\floor{\Vert \bfx \Vert_2^n})^s}$ & $\zeta(s)$ & non-continuous & R.2\\
-normalDenisty & $n,\in\N,\mu\in\R^n, \Sigma\in\R^{n\times n}$ & $\frac{\exp(-((\bx-\mu)^{T}\Sigma^{-1}(\bx-\mu))/2)}{\sqrt{(2\pi)^n\det(\Sigma)}}$ & $1.0$ & $C^{\infty}$ & R.3\\
+normalDensity & $n,\in\N,\mu\in\R^n, \Sigma\in\R^{n\times n}$ & $\frac{\exp(-((\bx-\mu)^{T}\Sigma^{-1}(\bx-\mu))/2)}{\sqrt{(2\pi)^n\det(\Sigma)}}$ & $1.0$ & $C^{\infty}$ & R.3\\
+tDensity & $n,\in\N,\delta\in\R^n, \Sigma\in\R^{n\times n}, \nu>0$ & (see R.4) & $1.0$ & $C^{\infty}$ & R.4\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $\R^n$.}

@@ -32,7 +32,7 @@ setGeneric("domainCheckP",def=function(object,x,param){standardGeneric("domainCh
 
 ##' Evaluate test function instance for a set of node points
 ##'
-##' evaluate is a generic function that evaluates the test function instance for a collection of evaluation points.
+##' evaluate is a generic function that evaluates the test function instance for a collection of evaluation points represented by a matrix. Each row is one evaluation point.
 ##' @param object Test function that gets evaluated
 ##' @param x Matrix where each row represents one evaluation point
 ##' @return Vector where each element is an evaluation of the test function for a node point (row in x)
