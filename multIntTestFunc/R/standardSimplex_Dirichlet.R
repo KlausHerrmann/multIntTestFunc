@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export standardSimplex_Dirichlet
 #' @exportClass standardSimplex_Dirichlet
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("standardSimplex_Dirichlet",dim=n,v=c(1,2,3,4))

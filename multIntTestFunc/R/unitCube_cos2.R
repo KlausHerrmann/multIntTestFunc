@@ -15,6 +15,7 @@
 #' @include AllGeneric.R
 #' @export unitCube_cos2
 #' @exportClass unitCube_cos2
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitCube_cos2",dim=n, coeffs=c(-1,2,-2))

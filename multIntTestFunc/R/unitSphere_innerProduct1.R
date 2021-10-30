@@ -21,6 +21,7 @@
 #' @include AllGeneric.R
 #' @export unitSphere_innerProduct1
 #' @exportClass unitSphere_innerProduct1
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitSphere_innerProduct1",dim=n,a=c(1,2,3),b=c(-1,-2,-3))

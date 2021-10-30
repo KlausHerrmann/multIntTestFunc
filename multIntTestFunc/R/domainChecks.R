@@ -10,6 +10,7 @@
 #' x <- matrix(rnorm(30),10,3)
 #' checkClosedUnitCube(x)
 #' @export
+#' @author Klaus Herrmann
 checkClosedUnitCube <- function(x){
   stopifnot(is.numeric(x)==TRUE)
   B1 <- apply(x>=0,1,min)
@@ -28,6 +29,7 @@ checkClosedUnitCube <- function(x){
 #' x <- matrix(rnorm(30),10,3)
 #' checkClosedUnitBall(x)
 #' @export
+#' @author Klaus Herrmann
 checkClosedUnitBall <- function(x){
   stopifnot(is.numeric(x)==TRUE)
   sqrt(rowSums( x * x )) <= 1
@@ -48,6 +50,7 @@ checkClosedUnitBall <- function(x){
 #' x <- matrix(rnorm(30),10,3)
 #' checkUnitSphere(x,eps=0.001)
 #' @export
+#' @author Klaus Herrmann
 checkUnitSphere <- function(x,eps=0){
   stopifnot(is.numeric(x)==TRUE, is.numeric(eps)==TRUE, length(eps)==1, eps>=0)
   B1 <- sqrt(rowSums( x * x )) <= 1 + eps
@@ -66,6 +69,7 @@ checkUnitSphere <- function(x,eps=0){
 #' x <- matrix(rnorm(30),10,3)
 #' checkStandardSimplex(x)
 #' @export
+#' @author Klaus Herrmann
 checkStandardSimplex <- function(x){
   stopifnot(is.numeric(x)==TRUE)
   #check that x_i >=0 and ||x||_1 <= 1
@@ -86,6 +90,7 @@ checkStandardSimplex <- function(x){
 #' x <- matrix(rnorm(30),10,3)
 #' checkRn(x)
 #' @export
+#' @author Klaus Herrmann
 checkRn <- function(x){
   stopifnot(is.numeric(x)==TRUE)
   return(rep(TRUE,length=nrow(x)))
@@ -103,6 +108,7 @@ checkRn <- function(x){
 #' x <- matrix(rexp(30,rate=1),10,3)
 #' checkPos(x)
 #' @export
+#' @author Klaus Herrmann
 checkPos <- function(x){
   stopifnot(is.numeric(x)==TRUE)
   apply( x >= 0, 1, min)

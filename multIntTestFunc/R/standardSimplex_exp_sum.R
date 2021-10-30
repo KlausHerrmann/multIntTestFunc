@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export standardSimplex_exp_sum
 #' @exportClass standardSimplex_exp_sum
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("standardSimplex_exp_sum",dim=n,coeff=1)

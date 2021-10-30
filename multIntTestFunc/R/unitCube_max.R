@@ -14,6 +14,7 @@
 #' @include AllGeneric.R
 #' @export unitCube_max
 #' @exportClass unitCube_max
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitCube_max",dim=n)

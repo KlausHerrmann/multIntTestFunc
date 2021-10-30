@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export unitBall_normGauss
 #' @exportClass unitBall_normGauss
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitBall_normGauss",dim=n)

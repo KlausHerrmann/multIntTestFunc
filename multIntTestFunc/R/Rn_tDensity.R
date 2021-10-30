@@ -18,6 +18,7 @@
 #' @include AllGeneric.R
 #' @export Rn_tDensity
 #' @exportClass Rn_tDensity
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_tDensity",dim=n,delta=rep(0,n),sigma=diag(n),df=3)

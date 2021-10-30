@@ -14,6 +14,7 @@
 #' @include AllGeneric.R
 #' @export unitCube_floor
 #' @exportClass unitCube_floor
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitCube_floor",dim=n)

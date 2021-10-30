@@ -20,6 +20,7 @@
 #' @include AllGeneric.R
 #' @export unitSphere_polynomial
 #' @exportClass unitSphere_polynomial
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitSphere_polynomial",dim=n,expo=c(1,2,3))

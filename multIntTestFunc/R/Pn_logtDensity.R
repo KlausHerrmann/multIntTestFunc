@@ -19,6 +19,7 @@
 #' @include AllGeneric.R
 #' @export Pn_logtDensity
 #' @exportClass Pn_logtDensity
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Pn_logtDensity",dim=n,delta=rep(0,n),sigma=diag(n),df=3)

@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export Rn_floorNorm
 #' @exportClass Rn_floorNorm
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_floorNorm",dim=n,s=2)

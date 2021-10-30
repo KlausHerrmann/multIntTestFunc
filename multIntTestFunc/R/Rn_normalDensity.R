@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export Rn_normalDensity
 #' @exportClass Rn_normalDensity
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_normalDensity",dim=n,mean=rep(0,n),sigma=diag(n))

@@ -16,6 +16,7 @@
 #' @include AllGeneric.R
 #' @export unitBall_polynomial
 #' @exportClass unitBall_polynomial
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("unitBall_polynomial",dim=n,expo=c(1,2,3))

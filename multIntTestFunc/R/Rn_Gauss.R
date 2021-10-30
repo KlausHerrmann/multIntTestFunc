@@ -14,6 +14,7 @@
 #' @include AllGeneric.R
 #' @export Rn_Gauss
 #' @exportClass Rn_Gauss
+#' @author Klaus Herrmann
 #' @examples
 #' n <- as.integer(3)
 #' f <- new("Rn_Gauss",dim=n)
