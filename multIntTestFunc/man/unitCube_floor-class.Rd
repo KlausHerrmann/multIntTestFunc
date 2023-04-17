@@ -25,3 +25,6 @@ The instance needs to be created with one parameter representing the dimension \
 n <- as.integer(3)
 f <- new("unitCube_floor",dim=n)
 }
+\author{
+Klaus Herrmann
+}

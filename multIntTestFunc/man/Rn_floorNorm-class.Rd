@@ -28,3 +28,6 @@ The instance needs to be created with two parameters representing \eqn{n} and \e
 n <- as.integer(3)
 f <- new("Rn_floorNorm",dim=n,s=2)
 }
+\author{
+Klaus Herrmann
+}

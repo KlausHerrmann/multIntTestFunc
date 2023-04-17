@@ -28,3 +28,6 @@ The instance needs to be created with two parameters representing the dimension 
 n <- as.integer(3)
 f <- new("standardSimplex_exp_sum",dim=n,coeff=1)
 }
+\author{
+Klaus Herrmann
+}

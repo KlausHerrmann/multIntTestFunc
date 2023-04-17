@@ -34,3 +34,6 @@ The instance needs to be created with three parameters representing the dimensio
 n <- as.integer(3)
 f <- new("unitSphere_innerProduct1",dim=n,a=c(1,2,3),b=c(-1,-2,-3))
 }
+\author{
+Klaus Herrmann
+}

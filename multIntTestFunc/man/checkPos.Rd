@@ -22,3 +22,6 @@ The dimension \eqn{n} is automatically inferred from the input matrix and is equ
 x <- matrix(rexp(30,rate=1),10,3)
 checkPos(x)
 }
+\author{
+Klaus Herrmann
+}

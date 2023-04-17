@@ -32,3 +32,6 @@ The instance needs to be created with two parameters representing the dimension 
 n <- as.integer(3)
 f <- new("unitSphere_polynomial",dim=n,expo=c(1,2,3))
 }
+\author{
+Klaus Herrmann
+}

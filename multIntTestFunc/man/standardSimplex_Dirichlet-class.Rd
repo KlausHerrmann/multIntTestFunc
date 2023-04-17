@@ -28,3 +28,6 @@ The instance needs to be created with two parameters representing the dimension 
 n <- as.integer(3)
 f <- new("standardSimplex_Dirichlet",dim=n,v=c(1,2,3,4))
 }
+\author{
+Klaus Herrmann
+}

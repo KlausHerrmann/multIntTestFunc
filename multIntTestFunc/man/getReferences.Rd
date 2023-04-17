@@ -2,9 +2,9 @@
 % Please edit documentation in R/AllGeneric.R, R/Pn_lognormalDensity.R,
 %   R/Pn_logtDensity.R, R/Rn_Gauss.R, R/Rn_floorNorm.R, R/Rn_normalDensity.R,
 %   R/Rn_tDensity.R, R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
-%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
-%   R/unitSphere_polynomial.R
+%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN4.R,
+%   R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
+%   R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
 \name{getReferences}
 \alias{getReferences}
 \alias{getReferences,Pn_lognormalDensity-method}
@@ -17,6 +17,7 @@
 \alias{getReferences,standardSimplex_exp_sum-method}
 \alias{getReferences,unitBall_normGauss-method}
 \alias{getReferences,unitBall_polynomial-method}
+\alias{getReferences,unitCube_BFN4-method}
 \alias{getReferences,unitCube_cos2-method}
 \alias{getReferences,unitCube_floor-method}
 \alias{getReferences,unitCube_max-method}
@@ -45,6 +46,8 @@ getReferences(object)
 \S4method{getReferences}{unitBall_normGauss}(object)
 
 \S4method{getReferences}{unitBall_polynomial}(object)
+
+\S4method{getReferences}{unitCube_BFN4}(object)
 
 \S4method{getReferences}{unitCube_cos2}(object)
 

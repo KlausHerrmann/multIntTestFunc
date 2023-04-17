@@ -31,3 +31,6 @@ The instance needs to be created with four parameters representing the dimension
 n <- as.integer(3)
 f <- new("Pn_logtDensity",dim=n,delta=rep(0,n),sigma=diag(n),df=3)
 }
+\author{
+Klaus Herrmann
+}

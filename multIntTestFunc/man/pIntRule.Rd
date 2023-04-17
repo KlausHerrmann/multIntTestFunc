@@ -24,3 +24,6 @@ lag <- gauss.quad(3,"laguerre")
 qRule1 <- pIntRule(herm,2)
 qRule2 <- pIntRule(list(herm,lag))
 }
+\author{
+Klaus Herrmann
+}

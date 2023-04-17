@@ -29,3 +29,6 @@ The instance needs to be created with three parameters representing the dimensio
 n <- as.integer(3)
 f <- new("Rn_normalDensity",dim=n,mean=rep(0,n),sigma=diag(n))
 }
+\author{
+Klaus Herrmann
+}

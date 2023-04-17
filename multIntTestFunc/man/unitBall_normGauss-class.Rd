@@ -26,3 +26,6 @@ The instance needs to be created with one parameter representing \eqn{n}.
 n <- as.integer(3)
 f <- new("unitBall_normGauss",dim=n)
 }
+\author{
+Klaus Herrmann
+}

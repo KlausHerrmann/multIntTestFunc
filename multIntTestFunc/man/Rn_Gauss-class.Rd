@@ -25,3 +25,6 @@ The instance needs to be created with one parameter representing \eqn{n}.
 n <- as.integer(3)
 f <- new("Rn_Gauss",dim=n)
 }
+\author{
+Klaus Herrmann
+}

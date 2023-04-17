@@ -25,3 +25,6 @@ WARNING: Due to floating point arithmetic the default value of \eqn{\varepsilon=
 x <- matrix(rnorm(30),10,3)
 checkUnitSphere(x,eps=0.001)
 }
+\author{
+Klaus Herrmann
+}

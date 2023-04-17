@@ -27,3 +27,6 @@ The instance needs to be created with two parameters representing the dimension 
 n <- as.integer(3)
 f <- new("unitCube_cos2",dim=n, coeffs=c(-1,2,-2))
 }
+\author{
+Klaus Herrmann
+}

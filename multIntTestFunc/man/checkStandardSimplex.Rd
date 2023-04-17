@@ -21,3 +21,6 @@ The dimension \eqn{n} is automatically inferred from the input matrix and is equ
 x <- matrix(rnorm(30),10,3)
 checkStandardSimplex(x)
 }
+\author{
+Klaus Herrmann
+}

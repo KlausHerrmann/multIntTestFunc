@@ -2,9 +2,9 @@
 % Please edit documentation in R/AllGeneric.R, R/Pn_lognormalDensity.R,
 %   R/Pn_logtDensity.R, R/Rn_Gauss.R, R/Rn_floorNorm.R, R/Rn_normalDensity.R,
 %   R/Rn_tDensity.R, R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
-%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
-%   R/unitSphere_polynomial.R
+%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN4.R,
+%   R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
+%   R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
 \name{exactIntegral}
 \alias{exactIntegral}
 \alias{exactIntegral,Pn_lognormalDensity-method}
@@ -17,6 +17,7 @@
 \alias{exactIntegral,standardSimplex_exp_sum-method}
 \alias{exactIntegral,unitBall_normGauss-method}
 \alias{exactIntegral,unitBall_polynomial-method}
+\alias{exactIntegral,unitCube_BFN4-method}
 \alias{exactIntegral,unitCube_cos2-method}
 \alias{exactIntegral,unitCube_floor-method}
 \alias{exactIntegral,unitCube_max-method}
@@ -45,6 +46,8 @@ exactIntegral(object)
 \S4method{exactIntegral}{unitBall_normGauss}(object)
 
 \S4method{exactIntegral}{unitBall_polynomial}(object)
+
+\S4method{exactIntegral}{unitCube_BFN4}(object)
 
 \S4method{exactIntegral}{unitCube_cos2}(object)
 

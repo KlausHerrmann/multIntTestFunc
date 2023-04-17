@@ -2,9 +2,9 @@
 % Please edit documentation in R/AllGeneric.R, R/Pn_lognormalDensity.R,
 %   R/Pn_logtDensity.R, R/Rn_Gauss.R, R/Rn_floorNorm.R, R/Rn_normalDensity.R,
 %   R/Rn_tDensity.R, R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
-%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_cos2.R,
-%   R/unitCube_floor.R, R/unitCube_max.R, R/unitSphere_innerProduct1.R,
-%   R/unitSphere_polynomial.R
+%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN4.R,
+%   R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
+%   R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
 \name{domainCheck}
 \alias{domainCheck}
 \alias{domainCheck,Pn_lognormalDensity,matrix-method}
@@ -17,6 +17,7 @@
 \alias{domainCheck,standardSimplex_exp_sum,matrix-method}
 \alias{domainCheck,unitBall_normGauss,matrix-method}
 \alias{domainCheck,unitBall_polynomial,matrix-method}
+\alias{domainCheck,unitCube_BFN4,matrix-method}
 \alias{domainCheck,unitCube_cos2,matrix-method}
 \alias{domainCheck,unitCube_floor,matrix-method}
 \alias{domainCheck,unitCube_max,matrix-method}
@@ -45,6 +46,8 @@ domainCheck(object, x)
 \S4method{domainCheck}{unitBall_normGauss,matrix}(object, x)
 
 \S4method{domainCheck}{unitBall_polynomial,matrix}(object, x)
+
+\S4method{domainCheck}{unitCube_BFN4,matrix}(object, x)
 
 \S4method{domainCheck}{unitCube_cos2,matrix}(object, x)
 
