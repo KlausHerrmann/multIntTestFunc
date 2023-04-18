@@ -31,7 +31,7 @@ In total there are six methods that can be used for an instance.
 5. **getTags** provides a vector of strings with tags associated to the specific function.
 6. **getReferences** provides a vector of strings with references that provide more details for this function. The first entry provides the subsection number in the "documentation_test_functions.pdf" file that provides details on the specific function.
 
-**Warning: The numerical integration scheme utilised in the following section is only used to showcase the package and its functions. It is not intended as an examples of a "best practice" when it comes to multivariate numerical integration.**
+**Warning: The numerical integration scheme utilized in the following section is only used to showcase the package and its functions. It is not intended as an examples of a "best practice" when it comes to multivariate numerical integration.**
 
 ## Monte Carlo Integration on the Unit Hypercube $C_n=[0,1]^n$
 We exemplify the usage of the package by numerically integrate over the unit hypercube $C_n = [0,1]^n$.
@@ -41,10 +41,10 @@ $$
 \int_{C_n} f(\vec{x}) d\vec{x} = \mathbb{E}[f(\vec{U})] \approx \frac{1}{n} \sum_{i=1}^n f(\vec{U}_i),
 $$
 where the law of large numbers is used with independent copies $\vec{U}_i$, $1\leq i\leq n$, of $\vec{U}$.
-It is easy to generate such independnet copies by simply drawing independt (pseudo) random numbers.
+It is easy to generate such independent copies by simply drawing independent (pseudo) random numbers.
 For example, for the specific choice of $f$ as
 $$
-f(\vec{x}) = (\cos( a_1x_1+\ldots+a_nx_n ))^2
+f(\vec{x}) = (\cos( a_1x_1+\ldots+a_n x_n ))^2
 $$
 we have
 $$

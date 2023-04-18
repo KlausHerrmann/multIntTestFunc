@@ -1,0 +1,35 @@
+---
+title: "Integration Test for Rn"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Integration Test for Rn}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+## Introduction
+We will use a product rule based on Gauss-Hermite quadrature to integrate test functions over the multivariate real numbers $R^n = (-\infty,\infty)^n$.
+Due to the exponential increase of node points in the number of dimensions, product rules are not recommended for high dimensional integration.
+They are however easy to compute benchmarks and we will use them for this reason.
+We start by creating the product rule nodes and weights.
+
+```{r integrate_Rn}
+require(multIntTestFunc)
+require(statmod)
+
+n <- as.integer(2)
+
+hermite <- gauss.quad(10,"hermite")
+multHermite <- pIntRule(hermite,n)
+nodes <- multHermite$nodes
+weights <- multHermite$weights
+
+f <- new("Rn_Gauss",dim=n)
+
+eval <- evaluate(f,nodes)
+approx <- sum(weights*eval)
+print(approx)
+
+#print exact integral
+print(exactIntegral(f))
+```
+

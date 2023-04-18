@@ -111,7 +111,7 @@ checkRn <- function(x){
 #' @author Klaus Herrmann
 checkPos <- function(x){
   stopifnot(is.numeric(x)==TRUE)
-  apply( x >= 0, 1, min)
+  as.logical(apply( x >= 0, 1, min))
 }
 
 
