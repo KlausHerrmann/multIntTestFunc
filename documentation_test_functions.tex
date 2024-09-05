@@ -284,6 +284,39 @@ we have, see \cite{BratleyFoxNiederreiter1992}, that
 \end{align*}
 %
 %
+\subsection*{C.5\hspace{0.5cm}Genz Oscillatory $f_1$}
+\addcontentsline{toc}{subsection}{C.5\hspace{0.5cm}Genz Oscillatory $f_1$}
+As proposed in \cite[Table 1, p. 84]{Genz1984} we can consider the function
+\begin{align*}
+f\colon C_{n}\to\R, \bx \mapsto f(\bx) = \cos\left(2\pi u + \sum^{n}_{i=1} a_i x_i \right),
+\end{align*}
+where $u\in\mathbb{R}$ and $(a_1,\dots,a_n) \in \mathbb{R}^n$ with $a_i\neq 0$.
+The value of $u$ does not change the difficulty of the integration, while higher values for $\abs{a_i}$ increase the difficulty; see \cite[p. 84]{Genz1984} for details. 
+We can then compute
+\begin{align*}
+\int_{C_{n}} f(\bx) \d\bx = \frac{2^n \cos\left(2\pi u + \sum_{i=1}^{n}a_i/2\right) \prod_{i=1}^n \sin(a_i/2)}{\prod_{i=1}^n a_i}
+\end{align*}
+via induction. 
+First we have for $c\in\mathbb{R}$ and $0\neq\kappa\in\mathbb{R}$ with the standard trigonometric identities $\sin(x+y)-\sin(y) = 2\cos(x/2+y)\sin(x/2)$, $x,y\in\mathbb{R}$, that 
+\begin{align*}
+\int_0^1 \cos(\kappa x  + c) \d x = \frac{\sin(\kappa + c) - \sin(c)}{\kappa} = \frac{2\cos(\kappa/2+c)\sin(\kappa/2)}{\kappa}.
+\end{align*}
+For $n=1$ we therefore we have
+\begin{align*}
+\int_0^1 \cos\left(2\pi u + a_1 x_1 \right) \d x_1 = \frac{2\cos(a_1/2+2\pi u)\sin(a_1/2)}{a_1}.
+\end{align*}
+By induction we have for $n \mapsto n+1$ that
+\begin{align*}
+\int_{C_{n+1}} &\cos\left(2\pi u + \sum^{n+1}_{i=1} a_i x_i \right) \d\bx \\
+&= \int_0^1 \int_{C_{n}} \cos\left(2\pi u + \sum^{n}_{i=1} a_i x_i + \frac{2\pi a_{n+1}x_{n+1}}{2\pi}\right) \d\bx\\
+&= \int_0^1 \int_{C_{n}} \cos\left(2\pi \left( u + \frac{a_{n+1}x_{n+1}}{2\pi} \right) + \sum^{n}_{i=1} a_i x_i \right) \d\bx\\
+&= \int_0^1 \frac{2^n \cos\left(2\pi \left( u + \frac{a_{n+1}x_{n+1}}{2\pi} \right) + \sum_{i=1}^{n}a_i/2\right) \prod_{i=1}^n \sin(a_i/2)}{\prod_{i=1}^n a_i} \d x_{n+1}\\
+&= \frac{2^n \prod_{i=1}^n \sin(a_i/2)}{\prod_{i=1}^n a_i} \int_0^1 \cos\left(2\pi u + a_{n+1}x_{n+1}  + \sum_{i=1}^{n}a_i/2\right) \d x_{n+1}\\
+&= \frac{2^n \prod_{i=1}^n \sin(a_i/2)}{\prod_{i=1}^n a_i} \frac{2\cos\left(a_{n+1}/2+2\pi u + \sum_{i=1}^{n}a_i/2\right)\sin(a_{n+1}/2)}{a_{n+1}}\\
+&= \frac{2^{n+1} \prod_{i=1}^{n+1} \sin(a_i/2)}{\prod_{i=1}^{n+1} a_i} \cos\left(2\pi u + \sum_{i=1}^{n+1}a_i/2\right).
+\end{align*}
+
+
 %
 %\newpage
 %
@@ -457,6 +490,8 @@ cos2 & $n \in \N$, $\bfv \in \R^n \setminus \mathbf{0}_n$ & $\left(\cos(\bfv\cdo
 floor & $n \in \N$ & $\floor{x_1+\ldots+x_n}$ & $(n-1)/2$ & non-continuous & C.2\\\rule{0pt}{4ex}
 max & $n \in \N$ & $\max(x_1,\ldots,x_n)$ & $n/(n+1)$ & continuous, non-differentiable & C.3\\\rule{0pt}{4ex}
 BFN4 & $n \in \N$ & $\sum^{n}_{i=1} (-1)^i \prod_{j=1}^{i} x_j$ & $-(1-(1/2)^n)/3$ & $C^{\infty}$ & C.4\\
+\rule{0pt}{4ex}
+Genz1 & $u\in\R$, $\bfa\in\R^n$, $a_i\neq 0$ & $\cos\left(2\pi u + \sum^{n}_{i=1} a_i x_i \right)$ & $\frac{2^n \cos\left(2\pi u + \sum_{i=1}^{n}\frac{a_i}{2}\right) \prod_{i=1}^n \sin(\frac{a_i}{2})}{\prod_{i=1}^n a_i}$ & $C^{\infty}$ & C.5\\
 \hline\hline
 \end{tabular}
 \caption{Functions with integration domain $C_n=[0,1]^n$.}

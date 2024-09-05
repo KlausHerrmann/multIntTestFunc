@@ -49,5 +49,5 @@ To get the latest development version follow the same steps but clone from branc
 ## Contribute
 To add a function two steps are necessary:
 
-1. Describe the function in the reference manual `documentation_test_functions.tex` including possible sources in the bib file. It is also necessary to update the tables at the end of the file.
+1. Describe the function in the reference manual `documentation_test_functions.tex` including possible sources in the bib file. It is also necessary to update the tables at the end of the file and to add the compiled `documentation_test_functions.pdf` to the repository.
 1. Create a R file for the function in the R directory following the naming convention `DOMAION_NAME.R`. The implementation has to implement all inherited methods (with Roxygen comments). For the `getReferences` method an identifier for the section in `documentation_test_functions.tex` has to be included as the first element of the vector. 
