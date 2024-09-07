@@ -26,15 +26,15 @@ unitCube_Genz1 <- setClass(Class="unitCube_Genz1",representation=representation(
 
 #' @rdname exactIntegral
 setMethod("exactIntegral","unitCube_Genz1",function(object){
-    stopifnot(object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(a)>0)==TRUE)
-    return(2^(object@dim)*cos(2*pi*u+sum(a/2))*prod(sin(a/2))/prod(a))
+    stopifnot(object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(object@a)>0)==TRUE)
+    return(2^(object@dim)*cos(2*pi*object@u+sum(object@a/2))*prod(sin(object@a/2))/prod(object@a))
     }
 )
 
 #' @rdname domainCheck
 setMethod("domainCheck",c(object="unitCube_Genz1",x="matrix"),
     function(object,x){
-      stopifnot(is.numeric(x)==TRUE, object@dim==ncol(x), object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(a)>0)==TRUE)
+      stopifnot(is.numeric(x)==TRUE, object@dim==ncol(x), object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(object@a)>0)==TRUE)
       checkClosedUnitCube(x)
     }
 )
@@ -42,7 +42,7 @@ setMethod("domainCheck",c(object="unitCube_Genz1",x="matrix"),
 #' @rdname evaluate
 setMethod("evaluate",c(object="unitCube_Genz1",x="matrix"),
     function(object,x){
-        stopifnot(is.numeric(x)==TRUE, object@dim==ncol(x), object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(a)>0)==TRUE)
+        stopifnot(is.numeric(x)==TRUE, object@dim==ncol(x), object@dim>=1, length(object@a)==object@dim, length(object@u)==1, all(abs(object@a)>0)==TRUE)
         z <- cos(2*pi*object@u + rowSums(sweep(x, MARGIN=2, object@a, "*")))
         return(z)
     }
@@ -65,7 +65,7 @@ setMethod("getIntegrationDomain",c(object="unitCube_Genz1"),
 #' @rdname getReferences
 setMethod("getReferences",c(object="unitCube_Genz1"),
     function(object){
-    return(c("C.5","Genz, A., 1984, September. Testing multidimensional integration routines. In Proc. of international conference on Tools, methods and languages for scientific and engineering computation (pp. 81-94)."))
+    return(c("C.8","Genz, A., 1984, September. Testing multidimensional integration routines. In Proc. of international conference on Tools, methods and languages for scientific and engineering computation (pp. 81-94)."))
     }
 )
 

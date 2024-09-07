@@ -2,8 +2,9 @@
 % Please edit documentation in R/AllGeneric.R, R/Pn_lognormalDensity.R,
 %   R/Pn_logtDensity.R, R/Rn_Gauss.R, R/Rn_floorNorm.R, R/Rn_normalDensity.R,
 %   R/Rn_tDensity.R, R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
-%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN4.R,
-%   R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
+%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN1.R,
+%   R/unitCube_BFN2.R, R/unitCube_BFN3.R, R/unitCube_BFN4.R,
+%   R/unitCube_Genz1.R, R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
 %   R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
 \name{getIntegrationDomain}
 \alias{getIntegrationDomain}
@@ -17,7 +18,11 @@
 \alias{getIntegrationDomain,standardSimplex_exp_sum-method}
 \alias{getIntegrationDomain,unitBall_normGauss-method}
 \alias{getIntegrationDomain,unitBall_polynomial-method}
+\alias{getIntegrationDomain,unitCube_BFN1-method}
+\alias{getIntegrationDomain,unitCube_BFN2-method}
+\alias{getIntegrationDomain,unitCube_BFN3-method}
 \alias{getIntegrationDomain,unitCube_BFN4-method}
+\alias{getIntegrationDomain,unitCube_Genz1-method}
 \alias{getIntegrationDomain,unitCube_cos2-method}
 \alias{getIntegrationDomain,unitCube_floor-method}
 \alias{getIntegrationDomain,unitCube_max-method}
@@ -47,7 +52,15 @@ getIntegrationDomain(object)
 
 \S4method{getIntegrationDomain}{unitBall_polynomial}(object)
 
+\S4method{getIntegrationDomain}{unitCube_BFN1}(object)
+
+\S4method{getIntegrationDomain}{unitCube_BFN2}(object)
+
+\S4method{getIntegrationDomain}{unitCube_BFN3}(object)
+
 \S4method{getIntegrationDomain}{unitCube_BFN4}(object)
+
+\S4method{getIntegrationDomain}{unitCube_Genz1}(object)
 
 \S4method{getIntegrationDomain}{unitCube_cos2}(object)
 

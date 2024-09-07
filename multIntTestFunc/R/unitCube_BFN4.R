@@ -63,7 +63,7 @@ setMethod("getIntegrationDomain",c(object="unitCube_BFN4"),
 #' @rdname getReferences
 setMethod("getReferences",c(object="unitCube_BFN4"),
     function(object){
-    return(c("C.4","Bratley, P., Fox, B. L., Niederreiter, H. (1992). Implementation and Tests of Low-Discrepancy Sequences. ACM Transactions on Modeling and Computer Simulation, 2(3), 195-213."))
+    return(c("C.7","Bratley, P., Fox, B. L., Niederreiter, H. (1992). Implementation and Tests of Low-Discrepancy Sequences. ACM Transactions on Modeling and Computer Simulation, 2(3), 195-213."))
     }
 )
 

@@ -2,8 +2,9 @@
 % Please edit documentation in R/AllGeneric.R, R/Pn_lognormalDensity.R,
 %   R/Pn_logtDensity.R, R/Rn_Gauss.R, R/Rn_floorNorm.R, R/Rn_normalDensity.R,
 %   R/Rn_tDensity.R, R/standardSimplex_Dirichlet.R, R/standardSimplex_exp_sum.R,
-%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN4.R,
-%   R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
+%   R/unitBall_normGauss.R, R/unitBall_polynomial.R, R/unitCube_BFN1.R,
+%   R/unitCube_BFN2.R, R/unitCube_BFN3.R, R/unitCube_BFN4.R,
+%   R/unitCube_Genz1.R, R/unitCube_cos2.R, R/unitCube_floor.R, R/unitCube_max.R,
 %   R/unitSphere_innerProduct1.R, R/unitSphere_polynomial.R
 \name{evaluate}
 \alias{evaluate}
@@ -17,7 +18,11 @@
 \alias{evaluate,standardSimplex_exp_sum,matrix-method}
 \alias{evaluate,unitBall_normGauss,matrix-method}
 \alias{evaluate,unitBall_polynomial,matrix-method}
+\alias{evaluate,unitCube_BFN1,matrix-method}
+\alias{evaluate,unitCube_BFN2,matrix-method}
+\alias{evaluate,unitCube_BFN3,matrix-method}
 \alias{evaluate,unitCube_BFN4,matrix-method}
+\alias{evaluate,unitCube_Genz1,matrix-method}
 \alias{evaluate,unitCube_cos2,matrix-method}
 \alias{evaluate,unitCube_floor,matrix-method}
 \alias{evaluate,unitCube_max,matrix-method}
@@ -47,7 +52,15 @@ evaluate(object, x)
 
 \S4method{evaluate}{unitBall_polynomial,matrix}(object, x)
 
+\S4method{evaluate}{unitCube_BFN1,matrix}(object, x)
+
+\S4method{evaluate}{unitCube_BFN2,matrix}(object, x)
+
+\S4method{evaluate}{unitCube_BFN3,matrix}(object, x)
+
 \S4method{evaluate}{unitCube_BFN4,matrix}(object, x)
+
+\S4method{evaluate}{unitCube_Genz1,matrix}(object, x)
 
 \S4method{evaluate}{unitCube_cos2,matrix}(object, x)
 

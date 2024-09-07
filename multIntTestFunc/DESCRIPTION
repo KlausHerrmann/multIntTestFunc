@@ -1,7 +1,7 @@
 Type: Package
 Package: multIntTestFunc
 Title: Provides Test Functions for Multivariate Integration
-Version: 0.2.0
+Version: 0.3.0
 Author: Klaus Herrmann [aut, cre]
 Maintainer: Klaus Herrmann <klaus.herrmann@usherbrooke.ca>
 Description: Provides implementations of functions that can be used to
@@ -29,7 +29,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1.9000
 Collate: 
     'AllGeneric.R'
     'Pn_lognormalDensity.R'
@@ -45,7 +45,11 @@ Collate:
     'standardSimplex_exp_sum.R'
     'unitBall_normGauss.R'
     'unitBall_polynomial.R'
+    'unitCube_BFN1.R'
+    'unitCube_BFN2.R'
+    'unitCube_BFN3.R'
     'unitCube_BFN4.R'
+    'unitCube_Genz1.R'
     'unitCube_cos2.R'
     'unitCube_floor.R'
     'unitCube_max.R'
