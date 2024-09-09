@@ -2,7 +2,7 @@ Type: Package
 Package: multIntTestFunc
 Title: Provides Test Functions for Multivariate Integration
 Version: 0.3.0
-Author: Klaus Herrmann [aut, cre]
+Authors@R: person(given = "Klaus", family = "Herrmann", role = c("aut", "cre"), email = "klaus.herrmann@usherbrooke.ca", comment = c(ORCID = "0000-0002-8044-5717"))
 Maintainer: Klaus Herrmann <klaus.herrmann@usherbrooke.ca>
 Description: Provides implementations of functions that can be used to
     test multivariate integration routines. The package covers six
